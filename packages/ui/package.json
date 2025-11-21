@@ -26,7 +26,7 @@
     "react-dom": "^19.2.0"
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx,js,jsx}": [
+    "apps/**/*.{ts,tsx,js,jsx,css,md}": [
       "eslint --max-warnings 0 --fix",
       "prettier --write"
     ]
