@@ -2,22 +2,6 @@ import Image from 'next/image';
 import { Button } from '@repo/ui/button';
 import styles from './page.module.css';
 
-type Props = Omit<ImageProps, 'src'> & {
-  srcLight: string;
-  srcDark: string;
-};
-
-const ThemeImage = (props: Props) => {
-  const { srcLight, srcDark } = props;
-
-  return (
-    <>
-      <Image alt="hello there this is a" src={srcLight} className="imgLight" />
-      <Image alt="hi" src={srcDark} className="imgDark" />
-    </>
-  );
-};
-
 export default function Home() {
   return (
     <div className={styles.page}>
