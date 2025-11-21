@@ -6,9 +6,11 @@
     "./*": "./src/*.tsx"
   },
   "scripts": {
-    "lint": "eslint . --max-warnings 0",
+    "lint": "eslint app --ext ts,tsx,js,jsx --max-warnings 0",
+    "format": "prettier --write \"app/**/*.{ts,tsx,js,jsx,css,md}\"",
     "generate:component": "turbo gen react-component",
-    "check-types": "tsc --noEmit"
+    "check-types": "tsc --noEmit",
+    "pre-commit": "lint-staged"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
@@ -22,5 +24,11 @@
   "dependencies": {
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx,js,jsx}": [
+      "eslint --max-warnings 0 --fix",
+      "prettier --write"
+    ]
   }
 }

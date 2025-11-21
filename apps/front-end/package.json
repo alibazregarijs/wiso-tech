@@ -7,9 +7,8 @@
     "dev": "next dev --port 3000",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint apps --ext ts,tsx,js,jsx --report-unused-disable-directives --max-warnings 0",
-    "lint:fix": "eslint apps --ext js,jsx,ts,tsx --fix",
-    "format": "prettier --write \"apps/**/*.{js,jsx,ts,tsx,css,html}\"",
+    "lint": "eslint --max-warnings 0",
+    "pre-commit": "lint-staged",
     "check-types": "next typegen && tsc --noEmit"
   },
   "dependencies": {
@@ -27,18 +26,10 @@
     "eslint": "^9.39.1",
     "typescript": "5.9.2"
   },
-  "husky": {
-    "husky": {
-      "hooks": {
-        "pre-commit": "lint-staged",
-        "pre-push": "pnpm run lint && pnpm run format"
-      }
-    }
-  },
   "lint-staged": {
     "src/**/*.{ts,tsx,js,jsx}": [
-      "pnpm run lint",
-      "pnpm run format"
+      "eslint --max-warnings 0 --fix",
+      "prettier --write"
     ]
   }
 }

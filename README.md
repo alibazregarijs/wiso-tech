@@ -133,3 +133,85 @@ Learn more about the power of Turborepo:
 - [Filtering](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters)
 - [Configuration Options](https://turborepo.com/docs/reference/configuration)
 - [CLI Usage](https://turborepo.com/docs/reference/command-line-reference)
+
+```
+wiso-tech
+├─ .eslintrc.json
+├─ .husky
+│  ├─ pre-commit
+│  └─ _
+│     └─ husky.sh
+├─ .npmrc
+├─ .prettierignore
+├─ .prettierrc
+├─ apps
+│  ├─ back-end
+│  │  ├─ app
+│  │  │  ├─ favicon.ico
+│  │  │  ├─ globals.css
+│  │  │  ├─ layout.tsx
+│  │  │  └─ page.tsx
+│  │  ├─ eslint.config.mjs
+│  │  ├─ next-env.d.ts
+│  │  ├─ next.config.ts
+│  │  ├─ package.json
+│  │  ├─ postcss.config.mjs
+│  │  ├─ public
+│  │  │  ├─ file.svg
+│  │  │  ├─ globe.svg
+│  │  │  ├─ next.svg
+│  │  │  ├─ vercel.svg
+│  │  │  └─ window.svg
+│  │  ├─ README.md
+│  │  └─ tsconfig.json
+│  └─ front-end
+│     ├─ app
+│     │  ├─ favicon.ico
+│     │  ├─ fonts
+│     │  │  ├─ GeistMonoVF.woff
+│     │  │  └─ GeistVF.woff
+│     │  ├─ globals.css
+│     │  ├─ layout.tsx
+│     │  ├─ page.module.css
+│     │  └─ page.tsx
+│     ├─ eslint.config.js
+│     ├─ next-env.d.ts
+│     ├─ next.config.js
+│     ├─ package.json
+│     ├─ public
+│     │  ├─ file-text.svg
+│     │  ├─ globe.svg
+│     │  ├─ next.svg
+│     │  ├─ turborepo-dark.svg
+│     │  ├─ turborepo-light.svg
+│     │  ├─ vercel.svg
+│     │  └─ window.svg
+│     ├─ README.md
+│     └─ tsconfig.json
+├─ package.json
+├─ packages
+│  ├─ eslint-config
+│  │  ├─ base.js
+│  │  ├─ next.js
+│  │  ├─ package.json
+│  │  ├─ react-internal.js
+│  │  └─ README.md
+│  ├─ typescript-config
+│  │  ├─ base.json
+│  │  ├─ nextjs.json
+│  │  ├─ package.json
+│  │  └─ react-library.json
+│  └─ ui
+│     ├─ eslint.config.mjs
+│     ├─ package.json
+│     ├─ src
+│     │  ├─ button.tsx
+│     │  ├─ card.tsx
+│     │  └─ code.tsx
+│     └─ tsconfig.json
+├─ pnpm-lock.yaml
+├─ pnpm-workspace.yaml
+├─ README.md
+└─ turbo.json
+
+```

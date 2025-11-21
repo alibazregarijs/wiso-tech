@@ -7,6 +7,7 @@
     "dev": "next dev --port 3001",
     "build": "next build",
     "lint": "eslint --max-warnings 0",
+    "pre-commit": "lint-staged",
     "check-types": "next typegen && tsc --noEmit"
   },
   "dependencies": {
@@ -26,5 +27,11 @@
     "eslint-config-next": "16.0.3",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx,js,jsx}": [
+      "eslint --max-warnings 0 --fix",
+      "prettier --write"
+    ]
   }
 }
