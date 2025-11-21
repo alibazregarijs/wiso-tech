@@ -23,6 +23,19 @@
   "packageManager": "pnpm@9.0.0",
   "engines": {
     "node": ">=18"
+  },
+  "lint-staged": {
+    "apps/front-end/app/**/*.{ts,tsx,js,jsx,css,md}": [
+      "eslint --max-warnings 0 --fix",
+      "prettier --write"
+    ],
+    "apps/back-end/app/**/*.{ts,tsx,js,jsx,css,md}": [
+      "eslint --max-warnings 0 --fix",
+      "prettier --write"
+    ],
+    "packages/ui/src/**/*.{ts,tsx,js,jsx,css,md}": [
+      "eslint --max-warnings 0 --fix",
+      "prettier --write"
+    ]
   }
-
 }
