@@ -21,6 +21,7 @@ const ThemeImage = (props: Props) => {
 export default function Home() {
   return (
     <div className={styles.page}>
+      <div>test</div>
       <main className={styles.main}>
         <ThemeImage
           className={styles.logo}
