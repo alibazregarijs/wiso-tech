@@ -1,4 +1,4 @@
-import Image, { type ImageProps } from 'next/image';
+import Image from 'next/image';
 import { Button } from '@repo/ui/button';
 import styles from './page.module.css';
 
@@ -8,12 +8,12 @@ type Props = Omit<ImageProps, 'src'> & {
 };
 
 const ThemeImage = (props: Props) => {
-  const { srcLight, srcDark, ...rest } = props;
+  const { srcLight, srcDark } = props;
 
   return (
     <>
-      <Image {...rest} src={srcLight} className="imgLight" />
-      <Image {...rest} src={srcDark} className="imgDark" />
+      <Image alt="hello there this is a" src={srcLight} className="imgLight" />
+      <Image alt="hi" src={srcDark} className="imgDark" />
     </>
   );
 };
@@ -23,14 +23,6 @@ export default function Home() {
     <div className={styles.page}>
       <div>test</div>
       <main className={styles.main}>
-        <ThemeImage
-          className={styles.logo}
-          srcLight="turborepo-dark.svg"
-          srcDark="turborepo-light.svg"
-          alt="Turborepo logo"
-          width={180}
-          height={38}
-        />
         <ol>
           <li>
             Get started by editing <code>apps/web/app/page.tsx</code>
