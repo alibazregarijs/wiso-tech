@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
-. "$(dirname "$0")/_/husky.sh"
 
-pnpm pre-commit
+# Run lint-staged (no deprecated husky.sh import)
+npx lint-staged

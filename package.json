@@ -7,7 +7,6 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,css,md}\"",
     "check-types": "turbo run check-types",
-    "pre-commit": "pnpm run --filter front-end pre-commit && pnpm run --filter back-end pre-commit && pnpm run --filter ui pre-commit",
     "prepare": "husky install"
   },
   "devDependencies": {
