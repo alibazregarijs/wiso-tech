@@ -13,7 +13,7 @@
     "eslint": "^9.39.1",
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-prettier": "^5.5.4",
-    "husky": "^8.0.3",
+    "husky": "^8.0.0",
     "lint-staged": "^16.2.7",
     "prettier": "^3.6.2",
     "turbo": "^2.6.1",
@@ -22,5 +22,19 @@
   "packageManager": "pnpm@9.0.0",
   "engines": {
     "node": ">=18"
+  },
+  "lint-staged": {
+    "apps/front-end/**/*.{ts,tsx,js,jsx}": [
+      "pnpm run lint --filter front-end",
+      "pnpm run format --filter front-end"
+    ],
+    "apps/back-end/**/*.{ts,js}": [
+      "pnpm run lint --filter back-end",
+      "pnpm run format --filter back-end"
+    ],
+    "packages/ui/**/*.{ts,tsx,js,jsx}": [
+      "pnpm run lint --filter ui",
+      "pnpm run format --filter ui"
+    ]
   }
 }
