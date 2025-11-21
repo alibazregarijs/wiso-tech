@@ -6,6 +6,8 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <div>test</div>
+      <div>test</div>
+      <div>test</div>
       <main className={styles.main}>
         <ol>
           <li>
