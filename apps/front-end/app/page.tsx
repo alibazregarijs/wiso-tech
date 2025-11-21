@@ -8,6 +8,9 @@ export default function Home() {
       <div>test</div>
       <div>test</div>
       <div>test</div>
+      <div>test</div>
+      <div>test</div>
+      <div>test</div>
       <main className={styles.main}>
         <ol>
           <li>
