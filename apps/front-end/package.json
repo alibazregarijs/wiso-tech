@@ -8,7 +8,6 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint . --max-warnings 0",
-    "format": "prettier --write \"apps/front-end/**/*.{js,jsx,ts,tsx,css,html}\"",
     "check-types": "next typegen && tsc --noEmit"
   },
   "dependencies": {
