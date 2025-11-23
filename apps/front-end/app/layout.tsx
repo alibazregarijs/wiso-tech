@@ -1,12 +1,32 @@
-import "./globals.css";
+import './globals.css';
 import type { Metadata } from 'next';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
-import { Lexend } from 'next/font/google';
+import localFont from 'next/font/local';
 
-const lexend = Lexend({
-  subsets: ['latin'],
-  weight: ['400', '500', '700', '900'],
-  variable: '--font-lexend',
+const lexend = localFont({
+  src: [
+    {
+      path: '../public/fonts/lexend-latin-400-normal.woff',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/lexend-latin-500-normal.woff',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/lexend-latin-700-normal.woff',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/lexend-latin-900-normal.woff',
+      weight: '900',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-lexend', // optional: creates a CSS variable
 });
 
 export const metadata: Metadata = {
@@ -22,9 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <AppRouterCacheProvider>
-        <body className={`${lexend.className} font-sans`}>
-          {children}
-        </body>
+        <body className={`${lexend.className} font-sans`}>{children}</body>
       </AppRouterCacheProvider>
     </html>
   );
