@@ -16,7 +16,7 @@ export default function InputWithLabel({ label, icon, ...props }: Props) {
       <Text
         as="label"
         htmlFor={props.id ?? props.name}
-        className="text-white-input-label cursor-pointer text-[14px] lg:text-[16px]"
+        className="cursor-pointer text-[14px] text-white lg:text-[16px]"
       >
         {label}
       </Text>

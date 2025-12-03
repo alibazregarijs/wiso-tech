@@ -16,11 +16,11 @@ export default function SignUpCard(props: Props) {
     'flex',
     'flex-col',
     'items-center',
-    'bg-input-color',
+    'bg-gray-dark-100',
     'rounded-lg',
     'p-6',
     'cursor-pointer',
-    isSelected ? 'ring-3 ring-green-color' : null,
+    isSelected ? 'ring-3 ring-green-light-200' : null,
   ]
     .filter(Boolean)
     .join(' ');

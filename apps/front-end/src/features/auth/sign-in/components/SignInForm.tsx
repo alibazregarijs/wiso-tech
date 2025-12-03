@@ -68,14 +68,14 @@ const SignInForm = () => {
                   >
                     Didn&apos;t have an account?
                     <Link
-                      className="text-button-green-color mx-1! text-[11px] hover:underline md:text-[13px]"
+                      className="text-green-light-100 mx-1! text-[11px] hover:underline md:text-[13px]"
                       href="/sign-up"
                     >
                       Sign Up
                     </Link>
                   </Text>
                   <Link
-                    className="text-button-green-color mx-1! text-[11px] hover:underline md:text-[13px]"
+                    className="text-green-light-100 mx-1! text-[11px] hover:underline md:text-[13px]"
                     href="/sign-up"
                   >
                     Forget Password?

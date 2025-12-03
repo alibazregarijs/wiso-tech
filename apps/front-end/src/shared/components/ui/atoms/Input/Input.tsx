@@ -48,7 +48,7 @@ export default function Input({
     'focus:ring-1',
     'focus:ring-primary/20',
     'dark:border-zinc-700',
-    'dark:bg-input-color',
+    'dark:bg-gray-dark-100',
     'dark:text-white',
     'dark:placeholder:text-zinc-500',
   ]

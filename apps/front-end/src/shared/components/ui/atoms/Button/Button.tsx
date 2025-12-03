@@ -21,19 +21,15 @@ export default function Button({
   switch (variant) {
     case 'secondary':
       classNames.push(
-        'bg-input-color',
+        'bg-gray-dark-100',
         'text-white',
-        'text-input-color',
+        'text-gray-dark-100',
         'font-bold'
       );
       break;
     case 'regular':
     default:
-      classNames.push(
-        'bg-button-green-color',
-        'text-background-color',
-        'font-bold'
-      );
+      classNames.push('bg-green-light-100', 'text-green-dark-100', 'font-bold');
       break;
   }
 

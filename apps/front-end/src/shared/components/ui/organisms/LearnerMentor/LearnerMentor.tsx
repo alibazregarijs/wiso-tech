@@ -44,9 +44,7 @@ export default function LearnerMentor(props: Props) {
         <SignUpCard
           h2="I'm a Learner"
           p="Ready to learn new skills and grow my knowledge."
-          icon={
-            <WorkIcon fontSize="large" className="text-button-green-color" />
-          }
+          icon={<WorkIcon fontSize="large" className="text-green-light-100" />}
           isSelected={selected === 'learner'}
           onClick={() => {
             setSelected('learner');
@@ -57,9 +55,7 @@ export default function LearnerMentor(props: Props) {
         <SignUpCard
           h2="I'm a Mentor"
           p="Ready to share my knowledge and guide others."
-          icon={
-            <WorkIcon fontSize="large" className="text-button-green-color" />
-          }
+          icon={<WorkIcon fontSize="large" className="text-green-light-100" />}
           isSelected={selected === 'mentor'}
           onClick={() => {
             setSelected('mentor');
@@ -85,7 +81,7 @@ export default function LearnerMentor(props: Props) {
           By creating an account,{' '}
           <Text
             as="span"
-            className="text-button-green-color cursor-pointer text-center text-[11px] hover:underline md:text-[13px]"
+            className="text-green-light-100 cursor-pointer text-center text-[11px] hover:underline md:text-[13px]"
           >
             you agree to our term.
           </Text>
@@ -97,7 +93,7 @@ export default function LearnerMentor(props: Props) {
         >
           Already have an account?
           <Link
-            className="text-button-green-color mx-1! text-[11px] hover:underline md:text-[13px]"
+            className="text-green-light-100 mx-1! text-[11px] hover:underline md:text-[13px]"
             href="/sign-in"
           >
             Log in
