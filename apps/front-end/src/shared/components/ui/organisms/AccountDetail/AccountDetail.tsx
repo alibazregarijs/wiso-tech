@@ -1,13 +1,17 @@
 'use client';
-import FormikError from '@shared/components/ui/atoms/FormikError/FormikError';
+
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import InputWithLabel from '@shared/components/ui/molecules/InputWithLabel/InputWithLabel';
 import { useField } from 'formik';
 import React from 'react';
 
 export default function AccountDetail() {
-  const [usernameField, usernameMeta] = useField('username');
-  const [emailField, emailMeta] = useField('email');
-  const [passwordField, passwordMeta] = useField('password');
+  const [usernameField] = useField('username');
+
+  const [emailField] = useField('email');
+
+  const [passwordField] = useField('password');
 
   return (
     <div className="flex h-full w-full flex-col rounded-lg px-6 pt-8">
@@ -22,7 +26,6 @@ export default function AccountDetail() {
             label="Username"
             placeholder="Enter a unique username"
           />
-          <FormikError field={usernameMeta} />
         </div>
 
         <div className="col-span-12 md:col-span-6">
@@ -32,7 +35,6 @@ export default function AccountDetail() {
             label="Email Address"
             placeholder="you@example.com"
           />
-          <FormikError field={emailMeta} />
         </div>
 
         <div className="col-span-12">
@@ -41,9 +43,12 @@ export default function AccountDetail() {
             {...passwordField}
             label="Password"
             type="password"
+            icon={[
+              <VisibilityIcon key="visible" fontSize="small" />,
+              <VisibilityOffIcon key="hidden" fontSize="small" />,
+            ]}
             placeholder="Enter a strong password"
           />
-          <FormikError field={passwordMeta} />
         </div>
       </div>
     </div>

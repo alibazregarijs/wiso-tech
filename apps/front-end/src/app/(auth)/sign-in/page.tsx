@@ -1,22 +1,12 @@
-'use client';
+import SignInForm from '@src/features/auth/sign-in/components/SignInForm';
+import React from 'react';
 
-export default function SignupPage() {
-  // The hook is fully typed
-
+const page = () => {
   return (
-    <div>
-      <h1>Sign Up</h1>
-      <form>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input type="email" id="email" name="email" />
-        </div>
-        <div>
-          <label htmlFor="password">Password</label>
-          <input type="password" id="password" name="password" />
-        </div>
-        <button type="submit">Sign Up</button>
-      </form>
+    <div className="bg-secondary-background-color mx-auto mt-8 mb-6 flex w-[80%] flex-col items-center justify-center rounded-lg border pb-6 md:w-[40%] dark:border-zinc-800">
+      <SignInForm />
     </div>
   );
-}
+};
+
+export default page;
