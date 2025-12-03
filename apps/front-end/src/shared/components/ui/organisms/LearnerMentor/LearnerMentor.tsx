@@ -98,7 +98,7 @@ export default function LearnerMentor(props: Props) {
           Already have an account?
           <Link
             className="text-button-green-color mx-1! text-[11px] hover:underline md:text-[13px]"
-            href="#"
+            href="/sign-in"
           >
             Log in
           </Link>

@@ -24,7 +24,17 @@ export async function proxy(request: NextRequest) {
     return NextResponse.redirect(url);
   }
 
-  return NextResponse.next();
+  const requestHeaders = new Headers(request.headers);
+
+  // 2. Add the current pathname to a custom header (e.g., "x-url")
+  requestHeaders.set('x-url', request.nextUrl.pathname);
+
+  // 3. Pass the modified headers to the next response
+  return NextResponse.next({
+    request: {
+      headers: requestHeaders,
+    },
+  });
 }
 
 export const config = {

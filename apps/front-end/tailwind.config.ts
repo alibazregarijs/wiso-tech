@@ -17,6 +17,7 @@ const config = {
         'button-green-color': '#13ec80',
         'green-color': '#12c66d',
         'gray-color': '#85858c',
+        'white-input-label': '#f6f8f7',
       },
       fontFamily: {
         display: ['var(--font-lexend)', 'sans-serif'],
