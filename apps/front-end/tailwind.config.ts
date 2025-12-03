@@ -11,13 +11,25 @@ const config = {
   theme: {
     extend: {
       colors: {
-        'background-color': '#102219',
-        'secondary-background-color': '#141d1a',
-        'input-color': '#27272a',
-        'button-green-color': '#13ec80',
-        'green-color': '#12c66d',
-        'gray-color': '#85858c',
-        'white-input-label': '#f6f8f7',
+        green: {
+          dark: {
+            100: '#102219',
+            200: '#141d1a',
+          },
+          light: {
+            100: '#13ec80',
+            200: '#12c66d',
+          },
+        },
+        gray: {
+          dark: {
+            100: '#27272a',
+          },
+          light: {
+            100: '#85858c',
+          },
+        },
+        white: '#f6f8f7',
       },
       fontFamily: {
         display: ['var(--font-lexend)', 'sans-serif'],

@@ -60,7 +60,7 @@ export default function ExpertiseInput({
             <TextField
               {...params}
               id="expertise-input"
-              className="bg-input-color mt-2! rounded-lg"
+              className="bg-gray-dark-100 mt-2! rounded-lg"
               placeholder={
                 value.length === 0 ? 'e.g. Python, Leadership, UX Research' : ''
               }

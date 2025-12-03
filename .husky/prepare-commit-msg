@@ -1,0 +1,29 @@
+#!/usr/bin/env sh
+
+COMMIT_MSG_FILE=$1
+COMMIT_SOURCE=$2
+SHA1=$3
+
+# 1. Skip if it is a merge commit or a commit amend
+if [ "$COMMIT_SOURCE" = "merge" ] || [ "$COMMIT_SOURCE" = "commit" ]; then
+    exit 0
+fi
+
+# 2. Skip if it is a fixup commit
+if grep -q "fixup!" "$COMMIT_MSG_FILE"; then
+    exit 0
+fi
+
+# 3. Extract Issue Key from the current branch name
+ISSUE_KEY=$(git branch --show-current | grep -o "[A-Z]\{2,\}-[0-9]\+")
+
+# 4. If found, prepend it to the message
+if [ -n "$ISSUE_KEY" ]; then
+    # Check if the message already starts with the key to avoid duplication
+    if ! grep -q "^$ISSUE_KEY" "$COMMIT_MSG_FILE"; then
+        TEMP=$(mktemp)
+        cat "$COMMIT_MSG_FILE" > "$TEMP"
+        echo "$ISSUE_KEY $(cat "$TEMP")" > "$COMMIT_MSG_FILE"
+        rm "$TEMP"
+    fi
+fi

@@ -80,7 +80,7 @@ export default function ProfileInformation() {
           src={preview || undefined}
         >
           {!preview && (
-            <CameraAltIcon fontSize="large" className="text-gray-color" />
+            <CameraAltIcon fontSize="large" className="text-gray-light-100" />
           )}
         </Avatar>
 
@@ -94,7 +94,7 @@ export default function ProfileInformation() {
             </Text>
             <Text
               as="h2"
-              className="dark:text-gray-color text-[10px] font-semibold whitespace-nowrap text-zinc-900 md:text-sm lg:text-[12px]"
+              className="dark:text-gray-light-100 text-[10px] font-semibold whitespace-nowrap text-zinc-900 md:text-sm lg:text-[12px]"
             >
               PNG, JPG or GIF (MAX. 5MB)
             </Text>

@@ -22,7 +22,7 @@ export const Header = async () => {
 
 const AuthLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="bg-background-color flex min-h-screen flex-col pt-4">
+    <div className="bg-green-dark-100 flex min-h-screen flex-col pt-4">
       <Suspense fallback={<div>loading...</div>}>
         <Header />
       </Suspense>
