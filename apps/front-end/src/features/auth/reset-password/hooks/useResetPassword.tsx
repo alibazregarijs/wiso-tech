@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter, useSearchParams } from 'next/navigation'; // 1. Import useSearchParams
-import { useCallback, useEffect, useState, useRef } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { authClient } from '@/lib/auth-client';
 
@@ -12,14 +12,12 @@ export const useResetPassword = () => {
     severity: 'success' as 'success' | 'error',
   });
 
-  const ranOnce = useRef(false);
   const router = useRouter();
   const searchParams = useSearchParams(); // 2. Initialize search params
   const token = searchParams.get('token'); // 3. Get the token from URL
 
   useEffect(() => {
-    if (!token && !ranOnce.current) {
-      ranOnce.current = true;
+    if (!token) {
       setTimeout(() => {
         setSnackbar({
           open: true,
