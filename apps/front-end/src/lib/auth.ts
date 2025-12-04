@@ -4,8 +4,6 @@ import { betterAuth } from 'better-auth';
 import { prismaAdapter } from 'better-auth/adapters/prisma';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export const auth = betterAuth({
   database: prismaAdapter(prisma, {
     provider: 'postgresql',
@@ -15,7 +13,7 @@ export const auth = betterAuth({
     enabled: true,
     sendResetPassword: async ({ user, token }) => {
       // 1. Destructure 'token' here
-
+      const resend = new Resend(process.env.RESEND_API_KEY);
       // 2. Define your base URL (use env var for production, localhost for dev)
       const baseURL =
         process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
