@@ -6,7 +6,7 @@ export async function proxy(request: NextRequest) {
   const url = request.nextUrl.clone();
 
   // 1. Define your public routes (no auth required)
-  const publicRoutes = ['/sign-in', '/sign-up', '/'];
+  const publicRoutes = ['/sign-in', '/sign-up', '/', '/reset-password'];
   const isPublicRoute = publicRoutes.includes(url.pathname);
 
   // 2. Redirect unauthenticated users trying to access protected routes
