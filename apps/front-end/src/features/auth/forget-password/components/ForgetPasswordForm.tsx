@@ -46,7 +46,7 @@ const ForgetPasswordForm = () => {
                   Remember your password?
                   <Link
                     className="text-green-light-100 mx-1! text-[11px] hover:underline md:text-[13px]"
-                    href="/sign-up"
+                    href="/sign-in"
                   >
                     Sign In
                   </Link>
