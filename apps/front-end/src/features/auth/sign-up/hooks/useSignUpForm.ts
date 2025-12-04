@@ -1,5 +1,6 @@
 'use client';
 
+import { UserType } from '@prisma/client';
 import { useRouter } from 'next/navigation';
 import { useCallback, useState } from 'react';
 
@@ -67,7 +68,7 @@ export const useSignUpForm = () => {
             profilePhoto: profilePhotoUrl,
             yearsOfExperience: Number(values.yearsOfExperience),
             expertise: values.expertise,
-            userType: values.userType.toUpperCase(),
+            userType: values.userType.toUpperCase() as UserType,
           },
           {
             onSuccess: () => {

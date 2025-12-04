@@ -23,7 +23,7 @@ const SignInForm = () => {
         onSubmit={handleSubmit}
       >
         {({ isSubmitting }) => (
-          <Form className="flex w-full flex-col">
+          <Form className="flex h-full w-full flex-col">
             <div className="flex w-full flex-col p-8">
               <div className="flex w-full flex-col gap-6">
                 <InputWithLabel
@@ -53,7 +53,7 @@ const SignInForm = () => {
                   type="submit"
                   disabled={isSubmitting}
                   variant="regular"
-                  className="mt-8 flex w-full items-center justify-center gap-2 p-3"
+                  className="mt-8 flex w-full items-center justify-center gap-2 rounded-md p-3"
                 >
                   Sign In
                   {isSubmitting && (
@@ -88,7 +88,7 @@ const SignInForm = () => {
       </Formik>
       <Snackbar
         open={snackbar.open}
-        time={4000} // use your `time` prop instead of autoHideDuration
+        time={2000} // use your `time` prop instead of autoHideDuration
         message={snackbar.message}
         severity={snackbar.severity}
         handleCloseSnackbar={handleCloseSnackbar}

@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
 
-export const signInValidationSchema = Yup.object({
+export const resetPasswordSchema = Yup.object({
   password: Yup.string()
     .min(8, 'Password must be at least 8 characters')
     .matches(/[a-z]/, 'Password must contain at least one lowercase letter')
