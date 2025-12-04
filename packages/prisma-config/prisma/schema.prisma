@@ -73,3 +73,15 @@ model Account {
   @@index([userId])
   @@map("account")
 }
+
+
+model Verification {
+  id         String   @id @default(cuid())
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime?
+  updatedAt  DateTime?
+
+  @@map("verification")
+}

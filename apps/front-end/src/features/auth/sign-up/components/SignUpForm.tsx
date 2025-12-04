@@ -37,7 +37,7 @@ const SignUpForm = () => {
       {/* 2. Add the Snackbar here */}
       <Snackbar
         open={snackbar.open}
-        time={4000} // use your `time` prop instead of autoHideDuration
+        time={2000} // use your `time` prop instead of autoHideDuration
         message={snackbar.message}
         severity={snackbar.severity}
         handleCloseSnackbar={handleCloseSnackbar}
