@@ -37,7 +37,14 @@
     "test": {
       "dependsOn": ["^build"],
       "outputs": ["coverage/**"],
-      "inputs": ["src/**/*.test.tsx", "src/**/*.test.ts", "jest.config.js"]
+      "inputs": [
+        "src/**/*.test.tsx",
+        "src/**/*.test.ts",
+        "jest.config.js",
+        "src/**",
+        "jest.config.js",
+        "jest.setup.ts"
+      ]
     },
 
     "dev": {
