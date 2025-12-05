@@ -1,5 +1,5 @@
 // For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
-import storybook from "eslint-plugin-storybook";
+import storybook from 'eslint-plugin-storybook';
 
 import { defineConfig, globalIgnores } from 'eslint/config';
 import nextVitals from 'eslint-config-next/core-web-vitals';
@@ -143,6 +143,31 @@ const eslintConfig = defineConfig([
       'require-atomic-updates': 'off',
     },
   },
+
+  // Jest configuration for test files
+  {
+    files: [
+      '**/__tests__/**/*',
+      '**/*.test.ts',
+      '**/*.test.tsx',
+      '**/*.spec.ts',
+      '**/*.spec.tsx',
+    ],
+    languageOptions: {
+      globals: {
+        test: 'readonly',
+        expect: 'readonly',
+        describe: 'readonly',
+        it: 'readonly',
+        beforeEach: 'readonly',
+        afterEach: 'readonly',
+        beforeAll: 'readonly',
+        afterAll: 'readonly',
+        jest: 'readonly',
+      },
+    },
+  },
+
   {
     plugins: {
       prettier: eslintPluginPrettier,
@@ -167,6 +192,7 @@ const eslintConfig = defineConfig([
 
   // Production rules
   {
+    files: ['src/**/*.{js,ts,jsx,tsx}'],
     languageOptions: {
       globals: {
         process: 'readonly',
@@ -252,6 +278,9 @@ const eslintConfig = defineConfig([
     'out/**',
     'build/**',
     'next-env.d.ts',
+    '**/gql/generated.ts',
+    '**/graphql/generated.ts',
+    '**/dist/**',
   ]),
 ]);
 

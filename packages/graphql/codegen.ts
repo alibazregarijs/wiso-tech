@@ -12,6 +12,11 @@ const config: CodegenConfig = {
         'typescript',
         'typescript-operations',
         'typescript-react-query',
+        {
+          add: {
+            content: '/* eslint-disable */',
+          },
+        },
       ],
       config: {
         reactQueryVersion: 5,
