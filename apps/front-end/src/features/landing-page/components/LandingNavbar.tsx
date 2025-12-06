@@ -28,7 +28,7 @@ const MobileNavLink = ({
   );
 };
 
-const AppLayout = () => {
+const LandingNavbar = () => {
   return (
     <Navbar>
       {/* --- TOP BAR --- */}
@@ -93,7 +93,7 @@ const AppLayout = () => {
         </div>
 
         {/* Mobile Actions */}
-        <div className="mt-4 flex flex-col space-y-4 border-t border-white/10 pt-4">
+        <div className="mt-4 flex justify-between space-y-4 border-t border-white/10 pt-4">
           <MobileNavLink href="/sign-in">
             <Text as="div" className="text-lg text-white">
               Sign In
@@ -104,7 +104,7 @@ const AppLayout = () => {
             <Button
               variant="regular"
               color="primary"
-              className="w-full justify-center"
+              className="justify-center"
             >
               Sign Up
             </Button>
@@ -115,4 +115,4 @@ const AppLayout = () => {
   );
 };
 
-export default AppLayout;
+export default LandingNavbar;

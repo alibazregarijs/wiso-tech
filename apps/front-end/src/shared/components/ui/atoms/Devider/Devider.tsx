@@ -10,7 +10,7 @@ export default function Devider(props: Props) {
     'mt-4',
     'mx-6',
     'border',
-    'dark:border-zinc-800',
+    'border-gray-light-100',
   ].join(' ');
 
   return <div {...rest} className={classNames} />;

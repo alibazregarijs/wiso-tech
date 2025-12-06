@@ -1,10 +1,12 @@
 import React from 'react';
-import Navbar from '@features/landing-page/components/Navbar';
+import LandingNavbar from '@src/features/landing-page/components/LandingNavbar';
+import LandingHeader from '@features/landing-page/components/LandingHeader';
 
 const page = () => {
   return (
     <div className="bg-green-dark-100 min-h-screen">
-      <Navbar />
+      <LandingNavbar />
+      <LandingHeader />
     </div>
   );
 };

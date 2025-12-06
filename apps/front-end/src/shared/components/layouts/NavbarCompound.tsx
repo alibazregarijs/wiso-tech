@@ -65,7 +65,7 @@ const NavbarRoot = ({ children, className = '' }: CommonProps) => {
             isOpen ? 'opacity-0' : 'opacity-100'
           }`}
         >
-          <Devider className="opacity-30" />
+          <Devider className="opacity-20" />
         </div>
       </nav>
     </NavbarContext.Provider>

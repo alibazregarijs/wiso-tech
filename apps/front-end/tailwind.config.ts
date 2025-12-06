@@ -32,7 +32,7 @@ const config = {
         white: '#f6f8f7',
       },
       fontFamily: {
-        display: ['var(--font-lexend)', 'sans-serif'],
+        lexend: ['var(--font-lexend)', 'sans-serif'],
         inter: ['var(--font-inter)', 'sans-serif'],
       },
       borderRadius: {
