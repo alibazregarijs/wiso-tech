@@ -33,6 +33,7 @@ const config = {
       },
       fontFamily: {
         display: ['var(--font-lexend)', 'sans-serif'],
+        inter: ['var(--font-inter)', 'sans-serif'],
       },
       borderRadius: {
         DEFAULT: '0.5rem',
