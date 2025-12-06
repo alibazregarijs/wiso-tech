@@ -1,6 +1,6 @@
 'use client';
-import { useSignInForm } from '@features/auth/sign-in/hooks/useSignInForm';
-import { signInValidationSchema } from '@features/auth/sign-in/types';
+import { useSignInForm } from '@src/features/auth/sign-in/hooks/useSignInForm';
+import { signInValidationSchema } from '@src/features/auth/sign-in/types';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { CircularProgress } from '@mui/material';

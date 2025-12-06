@@ -1,7 +1,7 @@
 'use client';
-import { LearnerMentorProvider } from '@features/auth/sign-up/context/LearnerMentorContextProvider';
-import { useSignUpForm } from '@features/auth/sign-up/hooks/useSignUpForm';
-import { signUpValidationSchema } from '@features/auth/sign-up/types';
+import { LearnerMentorProvider } from '@src/features/auth/sign-up/context/LearnerMentorContextProvider';
+import { useSignUpForm } from '@src/features/auth/sign-up/hooks/useSignUpForm';
+import { signUpValidationSchema } from '@src/features/auth/sign-up/types';
 import Devider from '@shared/components/ui/atoms/Devider/Devider';
 import Snackbar from '@shared/components/ui/molecules/Snackbar/Snackbar';
 import AccountDetail from '@shared/components/ui/organisms/AccountDetail/AccountDetail';

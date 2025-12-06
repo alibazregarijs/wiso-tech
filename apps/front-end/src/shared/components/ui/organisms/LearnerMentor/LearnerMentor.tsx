@@ -1,5 +1,5 @@
 'use client';
-import { useLearnerMentor } from '@features/auth/sign-up/context/LearnerMentorContextProvider';
+import { useLearnerMentor } from '@src/features/auth/sign-up/context/LearnerMentorContextProvider';
 import WorkIcon from '@mui/icons-material/Work';
 import CircularProgress from '@mui/material/CircularProgress';
 import Button from '@shared/components/ui/atoms/Button/Button';
