@@ -1,6 +1,10 @@
 import React from 'react';
 import Text from '@src/shared/components/ui/atoms/Text/Text';
 import { steps, stepsToturial } from '@features/landing-page/constants';
+import CheckboxLabel from '@src/shared/components/ui/molecules/CheckboxLabel/CheckboxLabel';
+import Image from 'next/image';
+
+import { forLearnersItems } from '@features/landing-page/constants';
 
 const LandingMain = () => {
   return (
@@ -49,6 +53,57 @@ const LandingMain = () => {
           </div>
         ))}
       </div>
+      {forLearnersItems.map(
+        (
+          {
+            id,
+            firstTitle,
+            secondTitle,
+            description,
+            firstCheckBoxLabel,
+            secondCheckBoxLabel,
+            thirdCheckBoxLabel,
+            image,
+          },
+          index // 1. Get the index here
+        ) => (
+          <div key={id} className="mx-4 mt-30 grid w-full grid-cols-2 items-center gap-4">
+            <div className="col-span-1 grid gap-4">
+              <Text as="h2" className="text-green-light-100 text-sm font-bold">
+                {firstTitle}
+              </Text>
+              <Text className="text-3xl font-bold text-white" as="h2">
+                {secondTitle}
+              </Text>
+              <Text as="p" className="text-gray-light-100 w-[65%] text-sm">
+                {description}
+              </Text>
+              <div className="mt-4 flex flex-col gap-4">
+                <CheckboxLabel fontSize="small">{firstCheckBoxLabel}</CheckboxLabel>
+                <CheckboxLabel fontSize="small">{secondCheckBoxLabel}</CheckboxLabel>
+                <CheckboxLabel fontSize="small">{thirdCheckBoxLabel}</CheckboxLabel>
+              </div>
+            </div>
+
+            <div
+              className={`col-span-1 h-[400px] w-[90%] items-center justify-items-center rounded-lg bg-white ${
+                index % 2 !== 0 ? 'order-first' : ''
+              }`}
+            >
+              <div className="flex h-full w-full items-center justify-center">
+                <Image
+                  src={image ?? ''}
+                  alt="Mentoring visual"
+                  width={350}
+                  height={350}
+                  loading="lazy"
+                  className="rounded-lg"
+                />
+              </div>
+            </div>
+          </div>
+        )
+      )}
     </main>
   );
 };

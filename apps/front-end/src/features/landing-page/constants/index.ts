@@ -1,6 +1,8 @@
 import TrackChangesIcon from '@mui/icons-material/TrackChanges';
 import GroupsIcon from '@mui/icons-material/Groups';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
+import mentoringMan from '@src/public/landing/mentoring-man.webp';
+import mentoringWoman from '@src/public/landing/mentoring-woman.webp';
 
 export const cardItems = [
   {
@@ -47,5 +49,31 @@ export const stepsToturial = [
     id: 'step-toturial-3',
     title: 'Start Growing',
     description: 'Schedule sessions, set goals, and track your progress together.',
+  },
+];
+
+export const forLearnersItems = [
+  {
+    id: 'forLearners',
+    firstTitle: 'FOR LEARNERS',
+    secondTitle: 'Your Personal Growth Journey',
+    description: ` Take control of your career development with tools designed for
+            success. Set goals, find courses, and get expert guidance every step
+            of the way.`,
+    firstCheckBoxLabel: 'Track milestones and see your progress in real-time.',
+    secondCheckBoxLabel: 'Discover courses and resources tailored to your goals.',
+    thirdCheckBoxLabel: 'Connect with mentors who have the experience you need.',
+    image: mentoringMan,
+  },
+  {
+    id: 'forMentors',
+    firstTitle: 'FOR MENTORS',
+    secondTitle: 'Share Your Expertise, Shape a Future',
+    description:
+      'Make a lasting impact by guiding the next generation of talent. Our platform provides the tools to manage mentees, share knowledge, and schedule sessions with ease.',
+    firstCheckBoxLabel: 'Easily manage your schedule and mentee communications.',
+    secondCheckBoxLabel: 'Share resources, articles, and feedback in one place.',
+    thirdCheckBoxLabel: 'Join a community of experts and expand your network',
+    image: mentoringWoman,
   },
 ];
