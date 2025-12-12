@@ -16,7 +16,7 @@ import Navbar, { useNavbar } from '@shared/components/layouts/NavbarCompound';
 const MobileNavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
   const { closeMenu } = useNavbar(); // Access context
   return (
-    <Link href={href} onClick={closeMenu}>
+    <Link href={href} onClick={() => closeMenu()}>
       {children}
     </Link>
   );
