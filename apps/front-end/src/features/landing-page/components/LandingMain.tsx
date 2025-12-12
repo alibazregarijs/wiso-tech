@@ -3,9 +3,7 @@ import Text from '@src/shared/components/ui/atoms/Text/Text';
 import { steps, stepsToturial } from '@features/landing-page/constants';
 import CheckboxLabel from '@src/shared/components/ui/molecules/CheckboxLabel/CheckboxLabel';
 import Image from 'next/image';
-import CardBox from '@src/shared/components/ui/organisms/CardBox/CardBox';
 import { forLearnersItems } from '@features/landing-page/constants';
-import { userMentorsLeanersItems } from '@features/landing-page/constants';
 
 const LandingMain = () => {
   return (
@@ -68,7 +66,10 @@ const LandingMain = () => {
           },
           index // 1. Get the index here
         ) => (
-          <div key={id} className="mx-4 mt-30 grid w-full grid-cols-2 items-center gap-4">
+          <div
+            key={id}
+            className="mx-4 mt-30 grid w-full grid-cols-1 items-center gap-4 md:grid-cols-2"
+          >
             <div className="col-span-1 grid gap-4">
               <Text as="h2" className="text-green-light-100 text-sm font-bold">
                 {firstTitle}
@@ -87,8 +88,8 @@ const LandingMain = () => {
             </div>
 
             <div
-              className={`col-span-1 h-[400px] w-[90%] items-center justify-items-center rounded-lg bg-white ${
-                index % 2 !== 0 ? 'order-first' : ''
+              className={`col-span-1 h-[400px] w-full rounded-lg bg-white md:w-[90%] ${
+                index % 2 !== 0 ? 'md:order-first' : ''
               }`}
             >
               <div className="flex h-full w-full items-center justify-center">
@@ -105,7 +106,7 @@ const LandingMain = () => {
           </div>
         )
       )}
-      <div className="mt-30 grid justify-items-center">
+      {/* <div className="mt-30 grid justify-items-center">
         <Text as="h2" className="text-3xl font-bold text-white">
           Trusted by Professionals and Ambitious Learners
         </Text>
@@ -139,7 +140,7 @@ const LandingMain = () => {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
     </main>
   );
 };
