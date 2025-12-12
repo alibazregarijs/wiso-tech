@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { forLearnersItems } from '@features/landing-page/constants';
 import { userMentorsLeanersItems } from '@features/landing-page/constants';
 import CardBox from '@src/shared/components/ui/organisms/CardBox/CardBox';
+import Button from '@src/shared/components/ui/atoms/Button/Button';
 
 const LandingMain = () => {
   return (
@@ -54,6 +55,9 @@ const LandingMain = () => {
           </div>
         ))}
       </div>
+
+      {/* user image in mentoring */}
+
       {forLearnersItems.map(
         (
           {
@@ -108,6 +112,8 @@ const LandingMain = () => {
           </div>
         )
       )}
+
+      {/* cards and user avatar image */}
       <div className="mt-30 grid justify-items-center">
         <Text as="h2" className="text-3xl font-bold text-white">
           Trusted by Professionals and Ambitious Learners
@@ -141,6 +147,23 @@ const LandingMain = () => {
               </CardBox>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* banner */}
+      <div className="bg-green-light-100 mt-30 rounded-lg p-10">
+        <div className="flex flex-col items-center justify-center gap-4">
+          <Text as="h2" className="text-green-dark-200 text-2xl font-bold">
+            Ready to Start Your Journey?
+          </Text>
+          <Text as="p" className="text-gray-dark-100 text-md text-center opacity-80 md:w-[60%]">
+            Whether you&apos;re looking to accelerate your career or share your expertise, your next
+            chapter starts here. Join our community today.
+          </Text>
+          <div className="mt-4 flex items-center justify-center gap-4">
+            <Button className="text-gray-dark-100 bg-white">Find a Mentor</Button>
+            <Button variant="secondary">Become a Mentor</Button>
+          </div>
         </div>
       </div>
     </main>
