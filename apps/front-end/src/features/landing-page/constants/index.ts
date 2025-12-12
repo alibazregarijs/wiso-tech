@@ -105,3 +105,30 @@ export const userMentorsLeanersItems = [
     career: 'Student at University of Tech',
   },
 ];
+
+export const footerItems = [
+  {
+    id: 'footer-col-1',
+    title1: 'Platform',
+    title2: 'Features',
+    title3: 'For Learners',
+    title4: 'For Mentors',
+    title5: 'Pricing',
+  },
+  {
+    id: 'footer-col-2',
+    title1: 'Company',
+    title2: 'About Us',
+    title3: 'Careers',
+    title4: 'Contact',
+    title5: 'Blog',
+  },
+  {
+    id: 'footer-col-3',
+    title1: 'Legal',
+    title2: 'Terms of Service',
+    title3: 'Privacy Policy',
+    title4: '',
+    title5: '',
+  },
+];
