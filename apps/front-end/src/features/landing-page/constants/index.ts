@@ -3,6 +3,9 @@ import GroupsIcon from '@mui/icons-material/Groups';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import mentoringMan from '@src/public/landing/mentoring-man.webp';
 import mentoringWoman from '@src/public/landing/mentoring-woman.webp';
+import userImage1 from '@src/public/landing/user-1.png';
+import userImage2 from '@src/public/landing/user-2.png';
+import userImage3 from '@src/public/landing/user-3.png';
 
 export const cardItems = [
   {
@@ -75,5 +78,30 @@ export const forLearnersItems = [
     secondCheckBoxLabel: 'Share resources, articles, and feedback in one place.',
     thirdCheckBoxLabel: 'Join a community of experts and expand your network',
     image: mentoringWoman,
+  },
+];
+
+export const userMentorsLeanersItems = [
+  {
+    id: 'user-1',
+    description: `"Wiso was a game-changer for my career transition. My mentor provided
+                invaluable insights that I couldn't find anywhere else."`,
+    image: userImage1,
+    name: 'Alex Johnson',
+    career: 'Software Engineer at TeachCorp',
+  },
+  {
+    id: 'user-2',
+    description: `"As a mentor, it's incredibly rewarding to see my mentees grow. The platform makes it so easy to connect and make a real difference."`,
+    image: userImage2,
+    name: 'Samantha Lee',
+    career: 'Product Manager at Innovate Inc.',
+  },
+  {
+    id: 'user-3',
+    description: `"The structured learning paths combined with direct access to a mentor helped me land my dream internship. Highly recommend!"`,
+    image: userImage3,
+    name: 'David Chen',
+    career: 'Student at University of Tech',
   },
 ];

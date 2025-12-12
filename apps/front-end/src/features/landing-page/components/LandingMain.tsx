@@ -3,8 +3,9 @@ import Text from '@src/shared/components/ui/atoms/Text/Text';
 import { steps, stepsToturial } from '@features/landing-page/constants';
 import CheckboxLabel from '@src/shared/components/ui/molecules/CheckboxLabel/CheckboxLabel';
 import Image from 'next/image';
-
+import CardBox from '@src/shared/components/ui/organisms/CardBox/CardBox';
 import { forLearnersItems } from '@features/landing-page/constants';
+import { userMentorsLeanersItems } from '@features/landing-page/constants';
 
 const LandingMain = () => {
   return (
@@ -104,6 +105,41 @@ const LandingMain = () => {
           </div>
         )
       )}
+      <div className="mt-30 grid justify-items-center">
+        <Text as="h2" className="text-3xl font-bold text-white">
+          Trusted by Professionals and Ambitious Learners
+        </Text>
+        <div className="ustify-items-center mt-20 grid grid-cols-3 gap-4">
+          {userMentorsLeanersItems.map(({ id, name, description, image, career }) => (
+            <div key={id} className="col-span-1">
+              <CardBox className="flex flex-col gap-6 rounded-xl! px-10 py-6">
+                <Text className="text-gray-light-100 w-[80%] text-sm" as="p">
+                  {description}
+                </Text>
+                <div className="flex gap-2">
+                  <Image
+                    className="rounded-full"
+                    src={image}
+                    priority={false}
+                    loading="lazy"
+                    alt="user-1"
+                    width={50}
+                    height={50}
+                  />
+                  <div className="flex flex-col justify-center">
+                    <Text as="h3" className="text-md text-white">
+                      {name}
+                    </Text>
+                    <Text className="text-gray-light-100 text-sm" as="p">
+                      {career}
+                    </Text>
+                  </div>
+                </div>
+              </CardBox>
+            </div>
+          ))}
+        </div>
+      </div>
     </main>
   );
 };
