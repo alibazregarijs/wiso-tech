@@ -8,34 +8,44 @@ const LandingFooter = () => {
   return (
     <>
       <Devider className="mx-0! mt-30! opacity-30" />
-      <div className="bg-green-dark-200 grid w-full grid-cols-2 gap-4 px-4 py-16 md:grid-cols-4">
-        <div className="col-span-1 w-full">
-          <div className="flex flex-col-reverse gap-2 md:flex-row md:items-start">
-            <HomeFilledIcon fontSize="large" className="text-green-light-100" />
-            <Text as="h3" className="text-lg font-bold text-white lg:text-2xl">
-              Wiso-Tech
+      <div className="bg-green-dark-200 grid">
+        <div className="grid w-full grid-cols-2 gap-4 px-4 py-16 md:grid-cols-4">
+          <div className="col-span-1 w-full">
+            <div className="flex flex-col-reverse gap-2 md:flex-row md:items-start">
+              <HomeFilledIcon fontSize="large" className="text-green-light-100" />
+              <Text as="h3" className="text-lg font-bold text-white lg:text-2xl">
+                Wiso-Tech
+              </Text>
+            </div>
+          </div>
+          {footerItems.map(({ id, title1, title2, title3, title4, title5 }) => (
+            <div key={id} className="col-span-1 w-full space-y-4">
+              <Text className="font-bold text-white" as="h2">
+                {title1}
+              </Text>
+              <Text as="p" className="text-gray-light-100 text-sm">
+                {title2}
+              </Text>
+              <Text as="p" className="text-gray-light-100 text-sm">
+                {title3}
+              </Text>
+              <Text as="p" className="text-gray-light-100 text-sm">
+                {title4}
+              </Text>
+              <Text as="p" className="text-gray-light-100 text-sm">
+                {title5}
+              </Text>
+            </div>
+          ))}
+        </div>
+        <div className="flex flex-col">
+          <Devider className="mx-0! w-full opacity-10!" />
+          <div className="col-span-4 mt-8 flex w-full items-center justify-center">
+            <Text className="text-gray-light-100 mb-10 text-center text-sm" as="p">
+              © 2024 Wiso-Tech. All rights reserved.
             </Text>
           </div>
         </div>
-        {footerItems.map(({ id, title1, title2, title3, title4, title5 }) => (
-          <div key={id} className="col-span-1 w-full space-y-4">
-            <Text className="font-bold text-white" as="h2">
-              {title1}
-            </Text>
-            <Text as="p" className="text-gray-light-100 text-sm">
-              {title2}
-            </Text>
-            <Text as="p" className="text-gray-light-100 text-sm">
-              {title3}
-            </Text>
-            <Text as="p" className="text-gray-light-100 text-sm">
-              {title4}
-            </Text>
-            <Text as="p" className="text-gray-light-100 text-sm">
-              {title5}
-            </Text>
-          </div>
-        ))}
       </div>
     </>
   );
