@@ -1,5 +1,5 @@
 'use client';
-import { useLearnerMentor } from '@features/auth/sign-up/context/LearnerMentorContextProvider';
+import { useLearnerMentor } from '@src/features/auth/sign-up/context/LearnerMentorContextProvider';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import Text from '@shared/components/ui/atoms/Text/Text';

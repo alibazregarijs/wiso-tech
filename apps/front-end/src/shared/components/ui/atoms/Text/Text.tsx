@@ -23,7 +23,7 @@ export default function Text<T extends ElementType = 'p'>({
   as,
   ...rest
 }: ReturnProps<T>) {
-  const classNames = [className, 'text-base'];
+  const classNames = [className];
   let Tag: ElementType = 'p';
 
   if (as) {

@@ -1,6 +1,6 @@
 'use client';
 
-import { useLearnerMentor } from '@features/auth/sign-up/context/LearnerMentorContextProvider';
+import { useLearnerMentor } from '@src/features/auth/sign-up/context/LearnerMentorContextProvider';
 import CameraAltIcon from '@mui/icons-material/CameraAlt';
 import Avatar from '@mui/material/Avatar';
 import Button from '@shared/components/ui/atoms/Button/Button';

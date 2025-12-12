@@ -65,7 +65,7 @@ export default function Input({
         type={inputType}
         {...props}
       />
-      {type === 'password' && icon && (
+      {type === 'password' && icon ? (
         <button
           type="button"
           onClick={() => setShowPassword((prev) => !prev)}
@@ -74,7 +74,7 @@ export default function Input({
         >
           {iconElement}
         </button>
-      )}
+      ) : null}
     </div>
   );
 }
