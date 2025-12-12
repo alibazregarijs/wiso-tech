@@ -4,6 +4,8 @@ import { steps, stepsToturial } from '@features/landing-page/constants';
 import CheckboxLabel from '@src/shared/components/ui/molecules/CheckboxLabel/CheckboxLabel';
 import Image from 'next/image';
 import { forLearnersItems } from '@features/landing-page/constants';
+import { userMentorsLeanersItems } from '@features/landing-page/constants';
+import CardBox from '@src/shared/components/ui/organisms/CardBox/CardBox';
 
 const LandingMain = () => {
   return (
@@ -106,20 +108,20 @@ const LandingMain = () => {
           </div>
         )
       )}
-      {/* <div className="mt-30 grid justify-items-center">
+      <div className="mt-30 grid justify-items-center">
         <Text as="h2" className="text-3xl font-bold text-white">
           Trusted by Professionals and Ambitious Learners
         </Text>
-        <div className="ustify-items-center mt-20 grid grid-cols-3 gap-4">
+        <div className="mt-20 grid grid-cols-1 justify-items-center gap-4 md:grid-cols-3">
           {userMentorsLeanersItems.map(({ id, name, description, image, career }) => (
-            <div key={id} className="col-span-1">
-              <CardBox className="flex flex-col gap-6 rounded-xl! px-10 py-6">
-                <Text className="text-gray-light-100 w-[80%] text-sm" as="p">
+            <div key={id} className="col-span-1 h-full">
+              <CardBox className="flex h-full flex-col gap-6 rounded-xl! px-10 py-6">
+                <Text className="text-gray-light-100 w-full text-sm lg:w-[80%]" as="p">
                   {description}
                 </Text>
-                <div className="flex gap-2">
+                <div className="mt-auto flex flex-col gap-2 lg:flex-row lg:items-start">
                   <Image
-                    className="rounded-full"
+                    className="shrink-0 rounded-full"
                     src={image}
                     priority={false}
                     loading="lazy"
@@ -128,10 +130,10 @@ const LandingMain = () => {
                     height={50}
                   />
                   <div className="flex flex-col justify-center">
-                    <Text as="h3" className="text-md text-white">
+                    <Text as="h3" className="text-md font-semibold text-white">
                       {name}
                     </Text>
-                    <Text className="text-gray-light-100 text-sm" as="p">
+                    <Text className="text-gray-light-100 w-full text-sm leading-tight" as="p">
                       {career}
                     </Text>
                   </div>
@@ -140,7 +142,7 @@ const LandingMain = () => {
             </div>
           ))}
         </div>
-      </div> */}
+      </div>
     </main>
   );
 };
