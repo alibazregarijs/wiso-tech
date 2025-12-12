@@ -1,13 +1,15 @@
 import React from 'react';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
+import type { ButtonHTMLAttributes } from 'react';
 
-type Props = Readonly<React.HTMLAttributes<HTMLButtonElement>> & {
+type Props = Readonly<ButtonHTMLAttributes<HTMLButtonElement>> & {
   isNotifications: boolean;
   count?: number; // optional count badge
 };
 
 export default function Notification({
   isNotifications,
+  type = 'button',
   className,
   count,
   ...props
@@ -21,7 +23,7 @@ export default function Notification({
     'p-2',
   ].join(' ');
   return (
-    <button {...props} className={classNames}>
+    <button type={type} {...props} className={classNames}>
       {/* MUI icon */}
       <NotificationsNoneIcon className="text-2xl text-white" />
 

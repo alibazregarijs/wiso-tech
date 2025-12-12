@@ -5,12 +5,13 @@ import Input from '@shared/components/ui/atoms/Input/Input';
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
 
-type Props = Readonly<React.HTMLAttributes<HTMLInputElement>>;
+type Props = Readonly<React.InputHTMLAttributes<HTMLInputElement>>;
 
 export default function Searchbar(props: Props) {
   const [isTyping, setIsTyping] = React.useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    props.onChange?.(e);
     setIsTyping(e.target.value);
   };
 
@@ -34,6 +35,7 @@ export default function Searchbar(props: Props) {
         </button>
       ) : null}
       <Input
+        value={isTyping}
         onChange={handleChange}
         placeholder="Search"
         className="w-full pl-11"

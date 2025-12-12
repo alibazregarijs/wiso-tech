@@ -7,16 +7,13 @@ const meta: Meta<typeof Searchbar> = {
 };
 
 export const Primary: StoryObj<typeof Searchbar> = {
-  args: {
-    children: (
-      <div className="flex flex-col">
-        <h1>hi there</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, dolore.
-        </p>
+  decorators: [
+    (Story) => (
+      <div className="max-w-md p-4">
+        <Story />
       </div>
     ),
-  },
+  ],
 };
 
 export default meta;

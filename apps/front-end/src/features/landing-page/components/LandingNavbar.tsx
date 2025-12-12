@@ -13,13 +13,7 @@ import { navItems } from '@shared/constants';
 import Navbar, { useNavbar } from '@shared/components/layouts/NavbarCompound';
 
 // Helper: A Link that closes the menu when clicked
-const MobileNavLink = ({
-  href,
-  children,
-}: {
-  href: string;
-  children: React.ReactNode;
-}) => {
+const MobileNavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
   const { closeMenu } = useNavbar(); // Access context
   return (
     <Link href={href} onClick={closeMenu}>
@@ -36,10 +30,7 @@ const LandingNavbar = () => {
         {/* BRAND */}
         <Navbar.Brand>
           <HomeFilledIcon fontSize="large" className="text-green-light-100" />
-          <Text
-            as="h1"
-            className="font-inter ml-4 text-2xl font-bold text-white"
-          >
+          <Text as="h1" className="font-inter ml-4 text-2xl font-bold text-white">
             Wiso-Tech
           </Text>
         </Navbar.Brand>
@@ -82,10 +73,7 @@ const LandingNavbar = () => {
         <div className="mt-4 flex flex-col space-y-4">
           {navItems.map((item) => (
             <MobileNavLink key={item.name} href={item.href}>
-              <Text
-                as="div"
-                className="text-gray-light-100 text-lg hover:text-white"
-              >
+              <Text as="div" className="text-gray-light-100 text-lg hover:text-white">
                 {item.name}
               </Text>
             </MobileNavLink>
@@ -93,7 +81,7 @@ const LandingNavbar = () => {
         </div>
 
         {/* Mobile Actions */}
-        <div className="mt-4 flex justify-between space-y-4 border-t border-white/10 pt-4">
+        <div className="mt-4 flex justify-between border-t border-white/10 pt-4">
           <MobileNavLink href="/sign-in">
             <Text as="div" className="text-lg text-white">
               Sign In
@@ -101,11 +89,7 @@ const LandingNavbar = () => {
           </MobileNavLink>
 
           <MobileNavLink href="/sign-up">
-            <Button
-              variant="regular"
-              color="primary"
-              className="justify-center"
-            >
+            <Button variant="regular" color="primary" className="justify-center">
               Sign Up
             </Button>
           </MobileNavLink>

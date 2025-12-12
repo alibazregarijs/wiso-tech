@@ -100,7 +100,7 @@ const LandingMain = () => {
             >
               <div className="flex h-full w-full items-center justify-center">
                 <Image
-                  src={image ?? ''}
+                  src={image}
                   alt="Mentoring visual"
                   width={350}
                   height={350}

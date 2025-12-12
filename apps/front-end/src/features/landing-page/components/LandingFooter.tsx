@@ -24,16 +24,17 @@ const LandingFooter = () => {
                 {title1}
               </Text>
               <Text as="p" className="text-gray-light-100 text-sm">
+                {title5}
+              </Text>
+              <Text as="p" className="text-gray-light-100 text-sm">
                 {title2}
               </Text>
               <Text as="p" className="text-gray-light-100 text-sm">
                 {title3}
               </Text>
+
               <Text as="p" className="text-gray-light-100 text-sm">
                 {title4}
-              </Text>
-              <Text as="p" className="text-gray-light-100 text-sm">
-                {title5}
               </Text>
             </div>
           ))}
