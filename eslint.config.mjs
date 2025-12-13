@@ -76,11 +76,13 @@ const eslintConfig = defineConfig([
       'import/no-unresolved': 'off',
       'import/extensions': [
         'error',
+        'ignorePackages',
         {
           js: 'never',
           jsx: 'never',
           ts: 'never',
           tsx: 'never',
+          webp: 'always',
         },
       ],
       'import/no-extraneous-dependencies': ['error', { devDependencies: true }],

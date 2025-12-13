@@ -8,19 +8,11 @@ import HomeFilledIcon from '@mui/icons-material/HomeFilled';
 import Text from '@shared/components/ui/atoms/Text/Text';
 import Button from '@shared/components/ui/atoms/Button/Button';
 import { navItems } from '@shared/constants';
-
+import { MobileNavLink } from '@src/shared/components/layouts/MobileNavLink';
 // The Compound Component
-import Navbar, { useNavbar } from '@shared/components/layouts/NavbarCompound';
+import Navbar from '@shared/components/layouts/NavbarCompound';
 
 // Helper: A Link that closes the menu when clicked
-const MobileNavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
-  const { closeMenu } = useNavbar(); // Access context
-  return (
-    <Link href={href} onClick={() => closeMenu()}>
-      {children}
-    </Link>
-  );
-};
 
 const LandingNavbar = () => {
   return (

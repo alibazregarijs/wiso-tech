@@ -1,3 +1,4 @@
+/* eslint-disable */
 import {
   useQuery,
   useInfiniteQuery,
@@ -8,24 +9,15 @@ import {
 import { fetcher } from '../lib/graphql-client';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
-export type Exact<T extends { [key: string]: unknown }> = {
-  [K in keyof T]: T[K];
+export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
+export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
+export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
+export type MakeEmpty<T extends { [key: string]: unknown }, K extends keyof T> = {
+  [_ in K]?: never;
 };
-export type MakeOptional<T, K extends keyof T> = Omit<T, K> & {
-  [SubKey in K]?: Maybe<T[SubKey]>;
-};
-export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & {
-  [SubKey in K]: Maybe<T[SubKey]>;
-};
-export type MakeEmpty<
-  T extends { [key: string]: unknown },
-  K extends keyof T,
-> = { [_ in K]?: never };
 export type Incremental<T> =
   | T
-  | {
-      [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never;
-    };
+  | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: { input: string; output: string };
@@ -94,10 +86,7 @@ export const useGetUsersQuery = <TData = GetUsersQuery, TError = unknown>(
 ) => {
   return useQuery<GetUsersQuery, TError, TData>({
     queryKey: variables === undefined ? ['GetUsers'] : ['GetUsers', variables],
-    queryFn: fetcher<GetUsersQuery, GetUsersQueryVariables>(
-      GetUsersDocument,
-      variables
-    ),
+    queryFn: fetcher<GetUsersQuery, GetUsersQueryVariables>(GetUsersDocument, variables),
     ...options,
   });
 };
@@ -105,20 +94,10 @@ export const useGetUsersQuery = <TData = GetUsersQuery, TError = unknown>(
 useGetUsersQuery.getKey = (variables?: GetUsersQueryVariables) =>
   variables === undefined ? ['GetUsers'] : ['GetUsers', variables];
 
-export const useInfiniteGetUsersQuery = <
-  TData = InfiniteData<GetUsersQuery>,
-  TError = unknown,
->(
+export const useInfiniteGetUsersQuery = <TData = InfiniteData<GetUsersQuery>, TError = unknown>(
   variables: GetUsersQueryVariables,
-  options: Omit<
-    UseInfiniteQueryOptions<GetUsersQuery, TError, TData>,
-    'queryKey'
-  > & {
-    queryKey?: UseInfiniteQueryOptions<
-      GetUsersQuery,
-      TError,
-      TData
-    >['queryKey'];
+  options: Omit<UseInfiniteQueryOptions<GetUsersQuery, TError, TData>, 'queryKey'> & {
+    queryKey?: UseInfiniteQueryOptions<GetUsersQuery, TError, TData>['queryKey'];
   }
 ) => {
   return useInfiniteQuery<GetUsersQuery, TError, TData>(
@@ -141,16 +120,7 @@ export const useInfiniteGetUsersQuery = <
 };
 
 useInfiniteGetUsersQuery.getKey = (variables?: GetUsersQueryVariables) =>
-  variables === undefined
-    ? ['GetUsers.infinite']
-    : ['GetUsers.infinite', variables];
+  variables === undefined ? ['GetUsers.infinite'] : ['GetUsers.infinite', variables];
 
-useGetUsersQuery.fetcher = (
-  variables?: GetUsersQueryVariables,
-  options?: RequestInit['headers']
-) =>
-  fetcher<GetUsersQuery, GetUsersQueryVariables>(
-    GetUsersDocument,
-    variables,
-    options
-  );
+useGetUsersQuery.fetcher = (variables?: GetUsersQueryVariables, options?: RequestInit['headers']) =>
+  fetcher<GetUsersQuery, GetUsersQueryVariables>(GetUsersDocument, variables, options);
