@@ -15,6 +15,10 @@ export default function Searchbar(props: Props) {
     setIsTyping(e.target.value);
   };
 
+  const clearInput = () => {
+    setIsTyping('');
+  };
+
   return (
     <div className="relative w-full">
       <button
@@ -27,6 +31,7 @@ export default function Searchbar(props: Props) {
 
       {isTyping.length > 0 ? (
         <button
+          onClick={() => clearInput()}
           type="button"
           aria-label="search icon"
           className="absolute top-1/2 right-4 z-10 -translate-y-1/2 cursor-pointer border-0 bg-transparent p-0 text-zinc-400"

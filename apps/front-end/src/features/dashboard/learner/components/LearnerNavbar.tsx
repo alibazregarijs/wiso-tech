@@ -9,24 +9,38 @@ import Button from '@shared/components/ui/atoms/Button/Button';
 import { MobileNavLink } from '@src/shared/components/layouts/MobileNavLink';
 import Searchbar from '@src/shared/components/ui/molecules/Searchbar/Searchbar';
 import Notification from '@src/shared/components/ui/atoms/Notification/Notification';
+import { Avatar } from '@mui/material';
+import useGetUserSession from '@src/shared/utils/useGetUserSession';
 
 const LearnerNavbar = () => {
+  const { user, session, isPending } = useGetUserSession();
+
+  if (isPending) {
+    return <div>Loading...</div>;
+  }
+
+  if (!user && !session) {
+    return <div>user not authenticated</div>;
+  }
+
   return (
     <Navbar>
       {/* --- TOP BAR --- */}
       <Navbar.Container>
         {/* BRAND */}
         <Navbar.Brand className="gap-4">
-          <HomeFilledIcon fontSize="large" className="text-green-light-100" />
-          <Text as="h1" className="font-inter ml-4 text-2xl font-bold text-white">
-            Wiso-Tech
-          </Text>
+          <div className="flex items-center justify-center">
+            <HomeFilledIcon fontSize="large" className="text-green-light-100" />
+            <Text as="h1" className="font-inter ml:2 font-bold text-white lg:ml-4 lg:text-2xl">
+              Wiso-Tech
+            </Text>
+          </div>
           <Navbar.Desktop>
             {navItems.map((item) => (
               <Link key={item.name} href={item.href}>
                 <Text
                   as="span"
-                  className="text-md text-gray-light-100 transition-colors hover:text-white"
+                  className="lg:text-md text-gray-light-100 transition-colors hover:text-white"
                 >
                   {item.name}
                 </Text>
@@ -41,6 +55,7 @@ const LearnerNavbar = () => {
         <Navbar.Desktop className="">
           <Searchbar />
           <Notification isNotifications={false} />
+          <Avatar alt="user image" src={user?.profilePhoto} />
         </Navbar.Desktop>
 
         {/* MOBILE TOGGLE (Visible on Mobile) */}
