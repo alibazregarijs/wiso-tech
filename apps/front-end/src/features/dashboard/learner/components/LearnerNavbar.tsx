@@ -29,7 +29,7 @@ const LearnerNavbar = () => {
               <Link key={item.name} href={item.href}>
                 <Text
                   as="span"
-                  className="lg:text-md text-gray-light-100 transition-colors hover:text-white"
+                  className="text-gray-light-100 transition-colors hover:text-white lg:text-base"
                 >
                   {item.name}
                 </Text>
