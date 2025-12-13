@@ -20,7 +20,7 @@ const LearnerNavbar = () => {
         <Navbar.Brand className="gap-4">
           <div className="flex items-center justify-center">
             <HomeFilledIcon fontSize="large" className="text-green-light-100" />
-            <Text as="h1" className="font-inter ml:2 font-bold text-white lg:ml-4 lg:text-2xl">
+            <Text as="h1" className="font-inter ml-2 font-bold text-white lg:ml-4 lg:text-2xl">
               Wiso-Tech
             </Text>
           </div>

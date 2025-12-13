@@ -1,4 +1,3 @@
-import React from 'react';
 import LearnerNavbar from '@src/features/dashboard/learner/components/LearnerNavbar';
 
 const page = () => {
