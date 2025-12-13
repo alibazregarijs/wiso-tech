@@ -5,7 +5,6 @@ import Link from 'next/link';
 import HomeFilledIcon from '@mui/icons-material/HomeFilled';
 import Text from '@shared/components/ui/atoms/Text/Text';
 import { navItems } from '@src/shared/constants';
-import Button from '@shared/components/ui/atoms/Button/Button';
 import { MobileNavLink } from '@src/shared/components/layouts/MobileNavLink';
 import Searchbar from '@src/shared/components/ui/molecules/Searchbar/Searchbar';
 import Notification from '@src/shared/components/ui/atoms/Notification/Notification';
@@ -13,16 +12,6 @@ import { Avatar } from '@mui/material';
 import useGetUserSession from '@src/shared/utils/useGetUserSession';
 
 const LearnerNavbar = () => {
-  const { user, session, isPending } = useGetUserSession();
-
-  if (isPending) {
-    return <div>Loading...</div>;
-  }
-
-  if (!user && !session) {
-    return <div>user not authenticated</div>;
-  }
-
   return (
     <Navbar>
       {/* --- TOP BAR --- */}
@@ -55,7 +44,7 @@ const LearnerNavbar = () => {
         <Navbar.Desktop className="">
           <Searchbar />
           <Notification isNotifications={false} />
-          <Avatar alt="user image" src={user?.profilePhoto} />
+          <UserAvatar />
         </Navbar.Desktop>
 
         {/* MOBILE TOGGLE (Visible on Mobile) */}
@@ -76,22 +65,20 @@ const LearnerNavbar = () => {
         </div>
 
         {/* Mobile Actions */}
-        <div className="mt-4 flex justify-between border-t border-white/10 pt-4">
-          <MobileNavLink href="/sign-in">
-            <Text as="div" className="text-lg text-white">
-              Sign In
-            </Text>
-          </MobileNavLink>
-
-          <MobileNavLink href="/sign-up">
-            <Button variant="regular" color="primary" className="justify-center">
-              Sign Up
-            </Button>
-          </MobileNavLink>
+        <div className="mt-4 flex items-center justify-between border-t border-white/10 pt-4">
+          <Searchbar />
+          <Notification isNotifications={false} />
+          <UserAvatar />
         </div>
       </Navbar.MobileMenu>
     </Navbar>
   );
+};
+
+export const UserAvatar = () => {
+  const { user } = useGetUserSession();
+
+  return <Avatar alt="user image" src={user?.profilePhoto} />;
 };
 
 export default LearnerNavbar;
