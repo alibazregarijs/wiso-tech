@@ -108,6 +108,14 @@ export const userMentorsLeanersItems = [
 
 export const footerItems = [
   {
+    id: 'footer-col-3',
+    title1: 'Legal',
+    title2: 'Terms of Service',
+    title3: 'Privacy Policy',
+    title4: '',
+    title5: '',
+  },
+  {
     id: 'footer-col-1',
     title1: 'Platform',
     title2: 'Features',
@@ -115,6 +123,7 @@ export const footerItems = [
     title4: 'For Mentors',
     title5: 'Pricing',
   },
+
   {
     id: 'footer-col-2',
     title1: 'Company',
@@ -122,13 +131,5 @@ export const footerItems = [
     title3: 'Careers',
     title4: 'Contact',
     title5: 'Blog',
-  },
-  {
-    id: 'footer-col-3',
-    title1: 'Legal',
-    title2: 'Terms of Service',
-    title3: 'Privacy Policy',
-    title4: '',
-    title5: '',
   },
 ];
