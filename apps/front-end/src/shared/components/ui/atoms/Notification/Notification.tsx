@@ -1,6 +1,5 @@
-import React from 'react';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
-import type { ButtonHTMLAttributes } from 'react';
+import React, { type ButtonHTMLAttributes } from 'react';
 
 type Props = Readonly<ButtonHTMLAttributes<HTMLButtonElement>> & {
   isNotifications: boolean;
@@ -38,8 +37,8 @@ export default function Notification({
           ) : (
             // Dot badge
             <>
-              <span className="absolute inline-flex h-2 w-2 animate-ping rounded-full bg-red-400 opacity-75"></span>
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-red-500"></span>
+              <span className="absolute inline-flex h-2 w-2 animate-ping rounded-full bg-red-400 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-red-500" />
             </>
           )}
         </span>

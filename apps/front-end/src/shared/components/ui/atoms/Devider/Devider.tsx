@@ -1,17 +1,13 @@
 import React from 'react';
 
+import { cn } from '@src/shared/utils';
+
+// Optional: A helper utility (standard in most projects)
+
 type Props = Readonly<React.HTMLAttributes<HTMLDivElement>>;
 
-export default function Devider(props: Props) {
-  const { className, ...rest } = props;
+export default function Divider({ className, ...rest }: Props) {
+  const classes = cn('mt-4 mx-6 border border-gray-light-100', className);
 
-  const classNames = [
-    className,
-    'mt-4',
-    'mx-6',
-    'border',
-    'border-gray-light-100',
-  ].join(' ');
-
-  return <div {...rest} className={classNames} />;
+  return <div {...rest} className={classes} />;
 }

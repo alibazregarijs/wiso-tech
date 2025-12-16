@@ -1,12 +1,6 @@
-import type {
-  ComponentPropsWithoutRef,
-  ElementType,
-  HTMLAttributes,
-  JSX,
-} from 'react';
+import type { ComponentPropsWithoutRef, ElementType, HTMLAttributes, JSX } from 'react';
 
-interface Props<T extends ElementType>
-  extends HTMLAttributes<JSX.IntrinsicElements> {
+interface Props<T extends ElementType> extends HTMLAttributes<JSX.IntrinsicElements> {
   as?: T; //
   bold?: boolean;
   italic?: boolean;

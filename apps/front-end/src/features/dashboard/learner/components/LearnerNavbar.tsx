@@ -1,15 +1,22 @@
 'use client';
-import React from 'react';
-import Navbar from '@src/shared/components/layouts/NavbarCompound';
-import Link from 'next/link';
 import HomeFilledIcon from '@mui/icons-material/HomeFilled';
-import Text from '@shared/components/ui/atoms/Text/Text';
-import { navItems } from '@src/shared/constants';
-import { MobileNavLink } from '@src/shared/components/layouts/MobileNavLink';
-import Searchbar from '@src/shared/components/ui/molecules/Searchbar/Searchbar';
-import Notification from '@src/shared/components/ui/atoms/Notification/Notification';
 import { Avatar } from '@mui/material';
+import Link from 'next/link';
+import React from 'react';
+
+import Text from '@shared/components/ui/atoms/Text/Text';
+import { MobileNavLink } from '@src/shared/components/layouts/MobileNavLink';
+import Navbar from '@src/shared/components/layouts/NavbarCompound';
+import Notification from '@src/shared/components/ui/atoms/Notification/Notification';
+import Searchbar from '@src/shared/components/ui/molecules/Searchbar/Searchbar';
+import { navItems } from '@src/shared/constants';
 import useGetUserSession from '@src/shared/utils/useGetUserSession';
+
+export const UserAvatar = () => {
+  const { user } = useGetUserSession();
+
+  return <Avatar alt="user image" src={user?.profilePhoto ?? ''} />;
+};
 
 const LearnerNavbar = () => {
   return (
@@ -39,7 +46,6 @@ const LearnerNavbar = () => {
         </Navbar.Brand>
 
         {/* DESKTOP NAV (Hidden on Mobile) */}
-
         {/* DESKTOP ACTIONS (Hidden on Mobile) */}
         <Navbar.Desktop className="">
           <Searchbar />
@@ -73,12 +79,6 @@ const LearnerNavbar = () => {
       </Navbar.MobileMenu>
     </Navbar>
   );
-};
-
-export const UserAvatar = () => {
-  const { user } = useGetUserSession();
-
-  return <Avatar alt="user image" src={user?.profilePhoto} />;
 };
 
 export default LearnerNavbar;

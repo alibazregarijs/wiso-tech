@@ -5,10 +5,9 @@ type Props = Readonly<React.HTMLAttributes<HTMLDivElement>> & {
 };
 
 export default function CardBox({ children, className = '', ...props }: Props) {
-  const classNames = [
-    className,
-    'bg-green-dark-200 border-gray-dark-100 rounded-md border',
-  ].join(' ');
+  const classNames = [className, 'bg-green-dark-200 border-gray-dark-100 rounded-md border'].join(
+    ' '
+  );
   return (
     <div {...props} className={classNames}>
       {children}

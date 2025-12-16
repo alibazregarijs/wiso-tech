@@ -1,17 +1,9 @@
 'use client';
 
-import React, {
-  createContext,
-  useContext,
-  useState,
-  ReactNode,
-  useMemo,
-  useCallback,
-} from 'react';
-import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
-import Devider from '../ui/atoms/Devider/Devider';
+import React, { createContext, useContext, useState, ReactNode, useMemo, useCallback } from 'react';
 
 // --- 1. Context Setup ---
 interface NavbarContextType {
@@ -50,34 +42,17 @@ const NavbarRoot = ({ children, className = '' }: CommonProps) => {
     setIsOpen(false);
   }, [setIsOpen]);
 
-  const value = useMemo(
-    () => ({ isOpen, toggleMenu, closeMenu }),
-    [isOpen, toggleMenu, closeMenu]
-  );
+  const value = useMemo(() => ({ isOpen, toggleMenu, closeMenu }), [isOpen, toggleMenu, closeMenu]);
 
   return (
     <NavbarContext.Provider value={value}>
-      <nav className={`relative w-full ${className}`}>
-        {children}
-
-        <div
-          className={`transition-opacity duration-300 ease-in-out ${
-            isOpen ? 'opacity-0' : 'opacity-100'
-          }`}
-        >
-          <Devider className="opacity-20" />
-        </div>
-      </nav>
+      <nav className={`relative w-full ${className}`}>{children}</nav>
     </NavbarContext.Provider>
   );
 };
 
 const NavbarContainer = ({ children, className = '' }: CommonProps) => {
-  return (
-    <div className={`flex items-center justify-between p-4 ${className}`}>
-      {children}
-    </div>
-  );
+  return <div className={`flex items-center justify-between p-4 ${className}`}>{children}</div>;
 };
 
 const NavbarBrand = ({ children, className = '' }: CommonProps) => {
@@ -86,9 +61,7 @@ const NavbarBrand = ({ children, className = '' }: CommonProps) => {
 
 const NavbarDesktop = ({ children, className = '' }: CommonProps) => {
   return (
-    <div
-      className={`hidden items-center justify-center space-x-4 md:flex ${className}`}
-    >
+    <div className={`hidden items-center justify-center space-x-4 md:flex ${className}`}>
       {children}
     </div>
   );

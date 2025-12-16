@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+
 import Notification from './Notification';
 
 const meta: Meta<typeof Notification> = {

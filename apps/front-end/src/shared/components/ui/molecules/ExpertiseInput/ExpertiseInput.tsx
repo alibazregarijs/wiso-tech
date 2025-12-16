@@ -1,9 +1,10 @@
 'use client';
-import { useLearnerMentor } from '@src/features/auth/sign-up/context/LearnerMentorContextProvider';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
-import Text from '@shared/components/ui/atoms/Text/Text';
 import React from 'react';
+
+import Text from '@shared/components/ui/atoms/Text/Text';
+import { useLearnerMentor } from '@src/features/auth/sign-up/context/LearnerMentorContextProvider';
 
 const skills = [
   'UI Design',
@@ -25,12 +26,7 @@ interface ExpertiseInputProps {
   readonly touched?: boolean;
 }
 
-export default function ExpertiseInput({
-  value,
-  onChange,
-  error,
-  touched,
-}: ExpertiseInputProps) {
+export default function ExpertiseInput({ value, onChange, error, touched }: ExpertiseInputProps) {
   const { isMentor } = useLearnerMentor();
 
   return (
@@ -48,22 +44,14 @@ export default function ExpertiseInput({
         }}
         renderInput={(params) => (
           <div>
-            <Text
-              as="label"
-              htmlFor="expertise-input"
-              className="cursor-pointer text-[#71717b]"
-            >
-              {isMentor
-                ? 'Add skill you can mentor others in'
-                : 'Add skill you want to learn'}
+            <Text as="label" htmlFor="expertise-input" className="cursor-pointer text-[#71717b]">
+              {isMentor ? 'Add skill you can mentor others in' : 'Add skill you want to learn'}
             </Text>
             <TextField
               {...params}
               id="expertise-input"
               className="bg-gray-dark-100 mt-2! rounded-lg"
-              placeholder={
-                value.length === 0 ? 'e.g. Python, Leadership, UX Research' : ''
-              }
+              placeholder={value.length === 0 ? 'e.g. Python, Leadership, UX Research' : ''}
               error={touched && !!error}
               sx={{
                 '& .MuiOutlinedInput-input': {
@@ -80,15 +68,13 @@ export default function ExpertiseInput({
                   borderColor: touched && error ? '#ef4444' : '#3f3f46',
                   borderRadius: '0.75rem',
                 },
-                '& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline':
-                  {
-                    borderColor: touched && error ? '#ef4444' : '#3f3f46',
-                  },
-                '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline':
-                  {
-                    borderColor: touched && error ? '#ef4444' : '#ffffff',
-                    borderWidth: '1px',
-                  },
+                '& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline': {
+                  borderColor: touched && error ? '#ef4444' : '#3f3f46',
+                },
+                '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                  borderColor: touched && error ? '#ef4444' : '#ffffff',
+                  borderWidth: '1px',
+                },
                 '& .MuiOutlinedInput-root.Mui-focused': {
                   boxShadow: 'none',
                 },

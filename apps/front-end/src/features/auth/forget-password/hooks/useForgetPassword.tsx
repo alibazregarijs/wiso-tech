@@ -21,10 +21,7 @@ export const useForgetPasswordForm = () => {
   };
 
   const handleSubmit = useCallback(
-    async (
-      values: typeof initialValues,
-      { resetForm }: { resetForm?: () => void } = {}
-    ) => {
+    async (values: typeof initialValues, { resetForm }: { resetForm?: () => void } = {}) => {
       try {
         const { error } = await authClient.requestPasswordReset({
           email: values.email,
@@ -54,9 +51,7 @@ export const useForgetPasswordForm = () => {
         setSnackbar({
           open: true,
           message:
-            err instanceof Error
-              ? err.message
-              : 'An unexpected error occurred. Please try again.',
+            err instanceof Error ? err.message : 'An unexpected error occurred. Please try again.',
           severity: 'error',
         });
       }

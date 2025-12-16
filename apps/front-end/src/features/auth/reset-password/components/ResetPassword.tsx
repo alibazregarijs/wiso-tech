@@ -2,19 +2,19 @@
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { CircularProgress } from '@mui/material';
+import { Formik, Form } from 'formik';
+import Link from 'next/link';
+import React from 'react';
+
 import { useResetPassword } from '@src/features/auth/reset-password/hooks/useResetPassword';
 import { resetPasswordSchema } from '@src/features/auth/reset-password/types';
 import Button from '@src/shared/components/ui/atoms/Button/Button';
 import Text from '@src/shared/components/ui/atoms/Text/Text';
 import InputWithLabel from '@src/shared/components/ui/molecules/InputWithLabel/InputWithLabel';
 import Snackbar from '@src/shared/components/ui/molecules/Snackbar/Snackbar';
-import { Formik, Form } from 'formik';
-import Link from 'next/link';
-import React from 'react';
 
 const ResetPasswordForm = () => {
-  const { initialValues, handleSubmit, snackbar, handleCloseSnackbar } =
-    useResetPassword();
+  const { initialValues, handleSubmit, snackbar, handleCloseSnackbar } = useResetPassword();
   return (
     <>
       <Formik

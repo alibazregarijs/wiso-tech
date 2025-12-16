@@ -1,10 +1,10 @@
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
-import { lexend, inter } from '@shared/utils/Font';
-import MuiThemeProvider from '@shared/utils/MuiThemeProvider';
 import type { Metadata } from 'next';
 import React from 'react';
 
 import QueryProvider from '@/shared/providers/QueryProvider';
+import { lexend, inter } from '@shared/utils/Font';
+import MuiThemeProvider from '@shared/utils/MuiThemeProvider';
 import '../styles/globals.css';
 
 export const metadata: Metadata = {

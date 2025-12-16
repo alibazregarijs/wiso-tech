@@ -1,15 +1,16 @@
 'use client';
 
-import { useLearnerMentor } from '@src/features/auth/sign-up/context/LearnerMentorContextProvider';
 import CameraAltIcon from '@mui/icons-material/CameraAlt';
 import Avatar from '@mui/material/Avatar';
+import { useField, useFormikContext } from 'formik';
+import React, { useRef, useState, useEffect } from 'react';
+
 import Button from '@shared/components/ui/atoms/Button/Button';
 import FormikError from '@shared/components/ui/atoms/FormikError/FormikError';
 import Text from '@shared/components/ui/atoms/Text/Text';
 import ExpertiseInput from '@shared/components/ui/molecules/ExpertiseInput/ExpertiseInput';
 import InputWithLabel from '@shared/components/ui/molecules/InputWithLabel/InputWithLabel';
-import { useField, useFormikContext } from 'formik';
-import React, { useRef, useState, useEffect } from 'react';
+import { useLearnerMentor } from '@src/features/auth/sign-up/context/LearnerMentorContextProvider';
 
 export default function ProfileInformation() {
   const { isMentor } = useLearnerMentor();
@@ -35,9 +36,7 @@ export default function ProfileInformation() {
     }
   }, [photoField.value]);
 
-  const handleFileChange = async (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
       if (file.size > 5 * 1024 * 1024) {
@@ -62,10 +61,7 @@ export default function ProfileInformation() {
 
   return (
     <div className="flex h-full w-full flex-col px-6 pt-8">
-      <Text
-        as="h1"
-        className="text-sm font-semibold text-zinc-900 lg:text-[18px] dark:text-white"
-      >
+      <Text as="h1" className="text-sm font-semibold text-zinc-900 lg:text-[18px] dark:text-white">
         Profile Information
       </Text>
 
@@ -79,9 +75,7 @@ export default function ProfileInformation() {
           }}
           src={preview || undefined}
         >
-          {!preview && (
-            <CameraAltIcon fontSize="large" className="text-gray-light-100" />
-          )}
+          {!preview && <CameraAltIcon fontSize="large" className="text-gray-light-100" />}
         </Avatar>
 
         <div className="grid w-full grid-cols-12 gap-2">
@@ -127,9 +121,7 @@ export default function ProfileInformation() {
       <div className="mt-6">
         <InputWithLabel
           id={isMentor ? 'years-of-working' : 'years-of-experience'}
-          label={
-            isMentor ? 'Years of Working in Career' : 'Have prior Experience?'
-          }
+          label={isMentor ? 'Years of Working in Career' : 'Have prior Experience?'}
           placeholder="e.g., 5"
           type="number"
           {...yearsField}

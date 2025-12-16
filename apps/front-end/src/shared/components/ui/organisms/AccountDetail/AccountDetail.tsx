@@ -2,9 +2,10 @@
 
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import InputWithLabel from '@shared/components/ui/molecules/InputWithLabel/InputWithLabel';
 import { useField } from 'formik';
 import React from 'react';
+
+import InputWithLabel from '@shared/components/ui/molecules/InputWithLabel/InputWithLabel';
 
 export default function AccountDetail() {
   const [usernameField] = useField('username');

@@ -5,13 +5,7 @@ type Props = Readonly<HTMLProps<HTMLInputElement>> & {
   icon?: ReactNode | ReactNode[];
 };
 
-export default function Input({
-  type,
-  placeholder,
-  className,
-  icon,
-  ...props
-}: Props) {
+export default function Input({ type, placeholder, className, icon, ...props }: Props) {
   const [showPassword, setShowPassword] = useState(false);
 
   let inputType: string | undefined;
@@ -59,12 +53,7 @@ export default function Input({
 
   return (
     <div className="relative w-full">
-      <input
-        className={classNames}
-        placeholder={placeholder}
-        type={inputType}
-        {...props}
-      />
+      <input className={classNames} placeholder={placeholder} type={inputType} {...props} />
       {type === 'password' && icon ? (
         <button
           type="button"

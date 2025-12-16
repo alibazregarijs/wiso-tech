@@ -1,5 +1,6 @@
-import SignInForm from '@src/features/auth/sign-in/components/SignInForm';
 import React from 'react';
+
+import SignInForm from '@src/features/auth/sign-in/components/SignInForm';
 
 const page = () => {
   return (

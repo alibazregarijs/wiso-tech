@@ -1,12 +1,16 @@
-import React from 'react';
-import Text from '@src/shared/components/ui/atoms/Text/Text';
-import { steps, stepsToturial } from '@features/landing-page/constants';
-import CheckboxLabel from '@src/shared/components/ui/molecules/CheckboxLabel/CheckboxLabel';
 import Image from 'next/image';
-import { forLearnersItems } from '@features/landing-page/constants';
-import { userMentorsLeanersItems } from '@features/landing-page/constants';
-import CardBox from '@src/shared/components/ui/organisms/CardBox/CardBox';
+import React from 'react';
+
+import {
+  steps,
+  stepsToturial,
+  forLearnersItems,
+  userMentorsLeanersItems,
+} from '@features/landing-page/constants';
 import Button from '@src/shared/components/ui/atoms/Button/Button';
+import Text from '@src/shared/components/ui/atoms/Text/Text';
+import CheckboxLabel from '@src/shared/components/ui/molecules/CheckboxLabel/CheckboxLabel';
+import CardBox from '@src/shared/components/ui/organisms/CardBox/CardBox';
 
 const LandingMain = () => {
   return (
@@ -21,7 +25,7 @@ const LandingMain = () => {
       </div>
 
       <div className="relative mt-14 grid w-full grid-cols-3 items-center justify-items-center">
-        <div className="border-gray-light-100 absolute top-1/2 left-0 w-full -translate-y-1/2 border-t-2"></div>
+        <div className="border-gray-light-100 absolute top-1/2 left-0 w-full -translate-y-1/2 border-t-2" />
 
         {steps.map((step) => (
           <div

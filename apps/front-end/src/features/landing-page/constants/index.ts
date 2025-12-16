@@ -1,6 +1,7 @@
-import TrackChangesIcon from '@mui/icons-material/TrackChanges';
 import GroupsIcon from '@mui/icons-material/Groups';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
+import TrackChangesIcon from '@mui/icons-material/TrackChanges';
+
 import mentoringMan from '@src/public/landing/mentoring-man.webp';
 import mentoringWoman from '@src/public/landing/mentoring-woman.webp';
 import userImage1 from '@src/public/landing/user-1.png';

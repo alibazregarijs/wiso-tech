@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { writeFileSync, existsSync, statSync } from 'node:fs';
 
 import { fileURLToPath } from 'node:url';
@@ -26,9 +25,7 @@ console.log(`🎯 Target File:  ${targetPath}`);
 try {
   // 2. Check if schema object is valid
   if (!schema) {
-    throw new Error(
-      '❌ Imported schema is undefined! Check back-graphql/graphql/schema.ts'
-    );
+    throw new Error('❌ Imported schema is undefined! Check back-graphql/graphql/schema.ts');
   }
 
   // 3. Convert to string

@@ -1,9 +1,10 @@
 'use client';
 
-import React from 'react';
-import Input from '@shared/components/ui/atoms/Input/Input';
-import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
+import SearchIcon from '@mui/icons-material/Search';
+import React from 'react';
+
+import Input from '@shared/components/ui/atoms/Input/Input';
 
 type Props = Readonly<React.InputHTMLAttributes<HTMLInputElement>>;
 

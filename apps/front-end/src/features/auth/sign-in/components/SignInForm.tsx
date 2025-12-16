@@ -1,20 +1,20 @@
 'use client';
-import { useSignInForm } from '@src/features/auth/sign-in/hooks/useSignInForm';
-import { signInValidationSchema } from '@src/features/auth/sign-in/types';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { CircularProgress } from '@mui/material';
-import Snackbar from '@shared/components/ui/molecules/Snackbar/Snackbar';
-import Button from '@src/shared/components/ui/atoms/Button/Button';
-import Text from '@src/shared/components/ui/atoms/Text/Text';
-import InputWithLabel from '@src/shared/components/ui/molecules/InputWithLabel/InputWithLabel';
 import { Formik, Form } from 'formik';
 import Link from 'next/link';
 import React from 'react';
 
+import Snackbar from '@shared/components/ui/molecules/Snackbar/Snackbar';
+import { useSignInForm } from '@src/features/auth/sign-in/hooks/useSignInForm';
+import { signInValidationSchema } from '@src/features/auth/sign-in/types';
+import Button from '@src/shared/components/ui/atoms/Button/Button';
+import Text from '@src/shared/components/ui/atoms/Text/Text';
+import InputWithLabel from '@src/shared/components/ui/molecules/InputWithLabel/InputWithLabel';
+
 const SignInForm = () => {
-  const { initialValues, handleSubmit, snackbar, handleCloseSnackbar } =
-    useSignInForm();
+  const { initialValues, handleSubmit, snackbar, handleCloseSnackbar } = useSignInForm();
   return (
     <>
       <Formik
@@ -56,9 +56,7 @@ const SignInForm = () => {
                   className="mt-8 flex w-full items-center justify-center gap-2 rounded-md p-3"
                 >
                   Sign In
-                  {isSubmitting && (
-                    <CircularProgress size={16} color="inherit" />
-                  )}
+                  {isSubmitting && <CircularProgress size={16} color="inherit" />}
                 </Button>
 
                 <div className="mt-2 flex flex-col items-center justify-center gap-2">

@@ -21,8 +21,7 @@ export const useResetPassword = () => {
       setTimeout(() => {
         setSnackbar({
           open: true,
-          message:
-            'Missing reset token. Please click the link in your email again.',
+          message: 'Missing reset token. Please click the link in your email again.',
           severity: 'error',
         });
       }, 0);
@@ -41,16 +40,12 @@ export const useResetPassword = () => {
   };
 
   const handleSubmit = useCallback(
-    async (
-      values: typeof initialValues,
-      { resetForm }: { resetForm?: () => void } = {}
-    ) => {
+    async (values: typeof initialValues, { resetForm }: { resetForm?: () => void } = {}) => {
       // 4. Guard clause: Ensure token exists before calling API
       if (!token) {
         setSnackbar({
           open: true,
-          message:
-            'Missing reset token. Please click the link in your email again.',
+          message: 'Missing reset token. Please click the link in your email again.',
           severity: 'error',
         });
         return;

@@ -34,24 +34,24 @@ graph TB
         UI[Shared UI Components]
         SB[Storybook]
     end
-    
+
     subgraph "API Layer"
         BE[Back-End Next.js API]
         GQL[GraphQL Gateway]
         UPLOAD[Upload API]
     end
-    
+
     subgraph "Data Layer"
         PRISMA[Prisma ORM]
         DB[(PostgreSQL Database)]
     end
-    
+
     subgraph "Shared Packages"
         ESLINT[ESLint Config]
         TS[TypeScript Config]
         GRAPH[GraphQL Schema]
     end
-    
+
     FE --> GQL
     FE --> UPLOAD
     UI --> FE
@@ -60,13 +60,13 @@ graph TB
     UPLOAD --> BE
     BE --> PRISMA
     PRISMA --> DB
-    
+
     FE -.-> ESLINT
     FE -.-> TS
     BE -.-> ESLINT
     BE -.-> TS
     GQL -.-> GRAPH
-    
+
     style FE fill:#4f46e5
     style BE fill:#059669
     style DB fill:#dc2626
@@ -79,27 +79,27 @@ flowchart TD
     START([User Access]) --> AUTH{Authenticated?}
     AUTH -->|No| LOGIN[Sign In Page]
     AUTH -->|Yes| ROLE{User Role?}
-    
+
     LOGIN --> SIGNUP[Sign Up Option]
     SIGNUP --> FORM[Multi-Step Form]
     FORM --> ACCOUNT[Account Details]
     ACCOUNT --> PROFILE[Profile Information]
     PROFILE --> ROLE_SELECT[Select Role: Learner/Mentor]
     ROLE_SELECT --> REGISTER[Register User]
-    
+
     REGISTER --> DB[(Database)]
     DB --> ROLE
-    
+
     ROLE -->|Mentee| MENTEE_DASH[Mentee Dashboard]
     ROLE -->|Mentor| MENTOR_DASH[Mentor Dashboard]
-    
+
     MENTEE_DASH --> FEATURES[Access Features]
     MENTOR_DASH --> FEATURES
-    
+
     FEATURES --> PROFILE_MGMT[Profile Management]
     FEATURES --> EXPERTISE[Expertise Tags]
     FEATURES --> UPLOAD[File Upload]
-    
+
     style AUTH fill:#fbbf24
     style ROLE fill:#fbbf24
     style MENTEE_DASH fill:#3b82f6
@@ -115,26 +115,26 @@ sequenceDiagram
     participant API as GraphQL API
     participant DB as Database
     participant Storage as File Storage
-    
+
     User->>FE: Navigate to Sign Up
     FE->>User: Display Multi-Step Form
-    
+
     User->>FE: Submit Account Details
     FE->>FE: Validate Form
-    
+
     User->>FE: Submit Profile Info
     FE->>FE: Store in Context
-    
+
     User->>FE: Select Role (Learner/Mentor)
     FE->>FE: Update Context State
-    
+
     User->>FE: Complete Registration
     FE->>API: GraphQL Mutation (createUser)
     API->>DB: Insert User Data
     DB-->>API: User Created
     API-->>FE: Success Response
     FE->>User: Redirect to Dashboard
-    
+
     alt File Upload Required
         User->>FE: Upload Profile Image
         FE->>Storage: POST /api/upload
@@ -146,23 +146,27 @@ sequenceDiagram
 ## Key Features
 
 ### Authentication & User Management
+
 - Multi-step registration process with form validation
 - Role-based access control for mentors and learners
 - Secure authentication flow with context providers
 - Profile information management with expertise tagging
 
 ### Dashboard System
+
 - Dedicated mentee dashboard with personalized features
 - Role-specific layouts and navigation
 - Protected routes with authentication guards
 
 ### UI Component Library
+
 - Atomic design pattern implementation (Atoms, Molecules, Organisms)
 - Storybook integration for component documentation
 - Reusable form components with Formik integration
 - Responsive Material-UI themed components
 
 ### Developer Experience
+
 - Monorepo architecture using Turborepo
 - Automated code generation with Plop templates
 - Comprehensive linting and formatting setup
@@ -170,6 +174,7 @@ sequenceDiagram
 - Conventional commit enforcement with Commitlint
 
 ### API & Data Management
+
 - GraphQL API with type-safe code generation
 - Prisma ORM for database operations
 - File upload handling with API routes
@@ -178,6 +183,7 @@ sequenceDiagram
 ## Technology Stack
 
 ### Front-End
+
 - **Framework**: Next.js 14+ (App Router)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS, Material-UI (MUI)
@@ -187,6 +193,7 @@ sequenceDiagram
 - **Fonts**: Lexend, Geist
 
 ### Back-End
+
 - **Framework**: Next.js API Routes
 - **API**: GraphQL (Schema-first approach)
 - **ORM**: Prisma
@@ -194,6 +201,7 @@ sequenceDiagram
 - **File Storage**: Pinata (IPFS)
 
 ### Development Tools
+
 - **Monorepo**: Turborepo, PNPM workspaces
 - **Code Generation**: GraphQL Codegen, Plop
 - **Linting**: ESLint (shared configs)
@@ -305,6 +313,7 @@ wiso-tech/
 **apps/**: Contains deployable applications (front-end and back-end)
 
 **packages/**: Shared packages and configurations used across apps
+
 - **eslint-config**: Standardized linting rules for consistency
 - **graphql**: Centralized GraphQL schema, types, and client configuration
 - **prisma-config**: Database schema and ORM setup
@@ -312,10 +321,12 @@ wiso-tech/
 - **ui**: Reusable component library
 
 **features/**: Feature-based organization following domain-driven design
+
 - Each feature contains its own components, hooks, services, store, types, and utilities
 - Promotes modularity and maintainability
 
 **shared/**: Cross-cutting concerns and reusable resources
+
 - Components organized by atomic design principles
 - Shared utilities, providers, and configurations
 
@@ -350,12 +361,14 @@ This command installs all dependencies for the monorepo, including all apps and 
 Create `.env` files in the respective application directories:
 
 **apps/back-end/.env**
+
 ```env
 DATABASE_URL="postgresql://user:password@localhost:5432/wiso_tech"
 GRAPHQL_ENDPOINT="http://localhost:3001/api/graphql"
 ```
 
 **apps/front-end/.env.local**
+
 ```env
 NEXT_PUBLIC_GRAPHQL_ENDPOINT="http://localhost:3001/api/graphql"
 NEXT_PUBLIC_API_URL="http://localhost:3000"
@@ -433,6 +446,7 @@ pnpm dev
 ```
 
 This starts:
+
 - Front-end application at `http://localhost:3000`
 - Back-end application at `http://localhost:3001`
 
@@ -490,6 +504,7 @@ pnpm plop
 ```
 
 Follow the prompts to generate:
+
 - Component file with TypeScript
 - Storybook story file
 - Proper file structure in the atomic design hierarchy
@@ -507,6 +522,7 @@ This regenerates TypeScript types from GraphQL schema and operations.
 ### Folder Conventions
 
 **Feature Modules**: Each feature follows this structure:
+
 ```
 feature-name/
 ├── components/       # Feature-specific components
@@ -520,6 +536,7 @@ feature-name/
 ```
 
 **Component Organization**: Follows atomic design:
+
 - **Atoms**: Basic building blocks (Button, Input, Text)
 - **Molecules**: Simple component combinations (InputWithLabel)
 - **Organisms**: Complex components (AccountDetail, ProfileInformation)
@@ -609,11 +626,13 @@ pnpm type-check
 ### Git Hooks
 
 Pre-commit hooks automatically run:
+
 - ESLint on staged files
 - Prettier formatting
 - Type checking
 
 Commit message hook enforces conventional commit format:
+
 ```
 type(scope): subject
 
@@ -746,6 +765,7 @@ Follow the Conventional Commits specification:
 ```
 
 Example:
+
 ```
 feat(auth): implement multi-step registration flow
 
@@ -755,4 +775,3 @@ feat(auth): implement multi-step registration flow
 
 Closes #123
 ```
-
