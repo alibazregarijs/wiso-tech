@@ -1,4 +1,5 @@
 import LearnerGoals from '@src/features/dashboard/learner/components/LearnerGoals';
+import LearnerMyMentor from '@src/features/dashboard/learner/components/LearnerMyMentor';
 import LearnerNavbar from '@src/features/dashboard/learner/components/LearnerNavbar';
 import Devider from '@src/shared/components/ui/atoms/Devider/Devider';
 import Text from '@src/shared/components/ui/atoms/Text/Text';
@@ -17,8 +18,10 @@ const page = () => {
         <div className="col-span-8 row-span-5">
           <LearnerGoals />
         </div>
-        {/* <div className="col-span-4 row-span-7 bg-amber-950">div2</div>
-        <div className="col-span-8 row-span-8 bg-red-500">div3</div>
+        <div className="col-span-4 row-span-7">
+          <LearnerMyMentor />
+        </div>
+        {/* <div className="col-span-8 row-span-8 bg-red-500">div3</div>
         <div className="col-span-4 row-span-4 bg-blue-600">div4</div> */}
       </div>
     </div>
