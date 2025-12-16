@@ -2,6 +2,7 @@ import LearnerGoals from '@src/features/dashboard/learner/components/LearnerGoal
 import LearnerInProgress from '@src/features/dashboard/learner/components/LearnerInProgress';
 import LearnerMyMentor from '@src/features/dashboard/learner/components/LearnerMyMentor';
 import LearnerNavbar from '@src/features/dashboard/learner/components/LearnerNavbar';
+import LearnerResource from '@src/features/dashboard/learner/components/LearnerResource';
 import Devider from '@src/shared/components/ui/atoms/Devider/Devider';
 import Text from '@src/shared/components/ui/atoms/Text/Text';
 
@@ -19,13 +20,15 @@ const page = () => {
         <div className="col-span-12 row-span-12 h-full md:col-span-6 md:row-span-6 lg:col-span-8 lg:row-span-5">
           <LearnerGoals />
         </div>
-        <div className="col-span-12 row-span-12 md:col-span-6 md:row-span-6 lg:col-span-4 lg:row-span-7">
+        <div className="col-span-12 row-span-12 h-full md:col-span-6 md:row-span-6 lg:col-span-4 lg:row-span-7">
           <LearnerMyMentor />
         </div>
-        <div className="col-span-8 row-span-8">
+        <div className="col-span-12 row-span-12 md:col-span-7 md:row-span-6 lg:col-span-8 lg:row-span-8">
           <LearnerInProgress />
         </div>
-        <div className="col-span-4 row-span-4 bg-amber-800">div4</div>
+        <div className="col-span-12 row-span-12 h-full md:col-span-5 md:row-span-6 lg:col-span-4 lg:row-span-4 lg:h-auto">
+          <LearnerResource />
+        </div>
       </div>
     </div>
   );

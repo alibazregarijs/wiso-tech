@@ -24,14 +24,17 @@ const LearnerNavbar = () => {
       {/* --- TOP BAR --- */}
       <Navbar.Container>
         {/* BRAND */}
-        <Navbar.Brand className="gap-4">
+        <Navbar.Brand className="gap-2">
           <div className="flex items-center justify-center">
             <HomeFilledIcon fontSize="large" className="text-green-light-100" />
-            <Text as="h1" className="font-inter ml-2 font-bold text-white lg:ml-4 lg:text-2xl">
+            <Text
+              as="h1"
+              className="font-inter ml-2 font-bold text-nowrap text-white lg:ml-4 lg:text-2xl"
+            >
               Wiso-Tech
             </Text>
           </div>
-          <Navbar.Desktop>
+          <Navbar.Desktop className="px-2">
             {navItems.map((item) => (
               <Link key={item.name} href={item.href}>
                 <Text
@@ -47,7 +50,7 @@ const LearnerNavbar = () => {
 
         {/* DESKTOP NAV (Hidden on Mobile) */}
         {/* DESKTOP ACTIONS (Hidden on Mobile) */}
-        <Navbar.Desktop className="">
+        <Navbar.Desktop>
           <Searchbar />
           <Notification isNotifications={false} />
           <UserAvatar />

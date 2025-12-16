@@ -8,7 +8,7 @@ import Text from '@src/shared/components/ui/atoms/Text/Text';
 
 const LearnerMyMentor = () => {
   return (
-    <div className="bg-green-dark-200 flex flex-col gap-4 rounded-lg p-6">
+    <div className="bg-green-dark-200 flex h-full flex-col gap-4 rounded-lg p-6">
       <div className="flex flex-col items-center justify-center gap-6">
         <Text as="h2" className="font-inter text-center text-2xl font-bold text-white">
           My Mentor

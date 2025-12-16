@@ -10,7 +10,7 @@ type Props = Readonly<React.HTMLAttributes<HTMLDivElement>> & {
 
 export default function IconBadge({ className, children, ...props }: Props) {
   const classNames = cn(
-    `rounded-lg flex items-center justify-center bg-green-dark-100  `,
+    `rounded-lg flex items-center justify-center bg-green-light-100 p-3`,
     className
   );
   return (
