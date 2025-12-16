@@ -1,3 +1,4 @@
+'use client';
 import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
@@ -6,45 +7,84 @@ import Text from '@src/shared/components/ui/atoms/Text/Text';
 
 type Props = Readonly<React.HTMLAttributes<HTMLDivElement>> & {
   value: number;
+  text?: string;
 };
 
-const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
+type ProgressBarBaseProps = {
+  children?: React.ReactNode;
+};
+
+const BorderLinearProgress = styled(LinearProgress)(() => ({
   height: 10,
   borderRadius: 5,
-  [`&.${linearProgressClasses.colorPrimary}`]: {
-    backgroundColor: theme.palette.grey[200],
-    ...theme.applyStyles('dark', {
-      backgroundColor: theme.palette.grey[800],
-    }),
-  },
+
   [`& .${linearProgressClasses.bar}`]: {
     borderRadius: 5,
   },
 }));
 
-export default function ProgressBar({ value = 20 }: Props) {
+export const LinearProgressBar = ({ value = 20 }: Props) => {
   let progressColor = '';
-
   if (value < 50) {
     progressColor = '#f97316';
   } else {
     progressColor = '#13ec80';
   }
-
   return (
-    <div className="flex flex-col gap-2">
-      <BorderLinearProgress
-        variant="determinate"
-        value={value}
-        sx={{
-          [`& .${linearProgressClasses.bar}`]: {
-            backgroundColor: progressColor,
-          },
-        }}
-      />
+    <BorderLinearProgress
+      variant="determinate"
+      value={value}
+      sx={{
+        [`& .${linearProgressClasses.bar}`]: {
+          backgroundColor: progressColor,
+        },
+        [`&.${linearProgressClasses.colorPrimary}`]: {
+          backgroundColor: '#141d1a',
+        },
+      }}
+    />
+  );
+};
+
+export const ProgressBarFooter = ({ value, text }: Props) => {
+  return (
+    <div className="flex flex-col">
+      <LinearProgressBar value={value} />
       <Text as="p" className="text-gray-light-100 font-base">
-        {value}%
+        {value}%{' '}
+        <Text as="strong" className="text-gray-light-100 font-base">
+          {text}
+        </Text>
       </Text>
     </div>
   );
-}
+};
+
+export const ProgressBarHeader = ({ text, value }: Props) => {
+  return (
+    <div className="flex flex-col gap-2">
+      <div className="flex items-center justify-between">
+        <Text as="p" className="text-gray-light-100 font-base">
+          {text}
+        </Text>
+        <Text as="p" className="text-gray-light-100 font-base">
+          {value}%
+        </Text>
+      </div>
+      <LinearProgressBar value={value} />
+    </div>
+  );
+};
+
+// 1. Rename this component to avoid the name collision
+const ProgressBarBase = ({ children }: ProgressBarBaseProps) => {
+  return <div className="flex flex-col gap-2">{children}</div>;
+};
+
+// 2. Create the final variable using Object.assign on the Base component
+const ProgressBar = Object.assign(ProgressBarBase, {
+  Header: ProgressBarHeader,
+  Footer: ProgressBarFooter,
+});
+
+export default ProgressBar;

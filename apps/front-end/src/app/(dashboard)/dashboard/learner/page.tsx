@@ -5,7 +5,7 @@ import Text from '@src/shared/components/ui/atoms/Text/Text';
 
 const page = () => {
   return (
-    <div className="bg-green-dark-200 min-h-screen">
+    <div className="bg-green-dark-100 min-h-screen">
       <LearnerNavbar />
       <Devider className="mx-0 opacity-30" />
       <div className="mt-10 px-4">
