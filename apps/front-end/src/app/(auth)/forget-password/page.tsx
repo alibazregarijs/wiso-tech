@@ -1,5 +1,6 @@
-import ForgetPasswordForm from '@src/features/auth/forget-password/components/ForgetPasswordForm';
 import React from 'react';
+
+import ForgetPasswordForm from '@src/features/auth/forget-password/components/ForgetPasswordForm';
 
 const Page = () => {
   return (

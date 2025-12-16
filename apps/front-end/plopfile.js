@@ -1,5 +1,5 @@
-export default function plop(/** @type {import("plop").NodePlopAPI} */ plop) {
-  plop.setGenerator('ui', {
+export default function configurePlop(/** @type {import("plop").NodePlopAPI} */ plopApi) {
+  plopApi.setGenerator('ui', {
     description: 'Create a new UI component',
     prompts: [
       {
@@ -17,7 +17,7 @@ export default function plop(/** @type {import("plop").NodePlopAPI} */ plop) {
         type: 'input',
         name: 'path',
         message: 'Component path',
-        // 👇 change default to src/app
+        // 👇 changed default to src/app
         default: 'src/shared/components/ui',
       },
     ],
@@ -40,9 +40,10 @@ export default function plop(/** @type {import("plop").NodePlopAPI} */ plop) {
           'export { default as {{pascalCase name}} } from "./{{pascalCase name}}/{{pascalCase name}}";',
       },
       (answers) => {
-        const componentPath = `${answers.path}/${answers.type}s/${plop.getHelper('pascalCase')(answers.name)}`;
+        const componentPath = `${answers.path}/${answers.type}s/${plopApi.getHelper('pascalCase')(
+          answers.name
+        )}`;
 
-        /* eslint-disable no-console */
         console.log('\n✅ Component created successfully!');
         console.log('\n📂 Navigate to your component:');
         console.log(`\n   cd ${componentPath}\n`);

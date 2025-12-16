@@ -15,8 +15,7 @@ export const auth = betterAuth({
       // 1. Destructure 'token' here
       const resend = new Resend(process.env.RESEND_API_KEY);
       // 2. Define your base URL (use env var for production, localhost for dev)
-      const baseURL =
-        process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+      const baseURL = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
 
       // 3. Construct the link manually
       // This creates: http://localhost:3000/reset-password?token=xyz...

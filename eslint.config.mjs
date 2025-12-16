@@ -1,6 +1,5 @@
-// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
+// eslint.config.mjs
 import storybook from 'eslint-plugin-storybook';
-
 import { defineConfig, globalIgnores } from 'eslint/config';
 import nextVitals from 'eslint-config-next/core-web-vitals';
 import nextTs from 'eslint-config-next/typescript';
@@ -11,16 +10,30 @@ const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
 
+  // --- Main Configuration for Front End ---
   {
     plugins: {
       'unused-imports': unusedImportsPlugin,
     },
+    // Ensure this matches your actual folder structure
+    files: ['apps/front-end/**/*.{ts,tsx,js,jsx}'],
+    
+    // FIX 1: Add settings here so ESLint understands "@/lib/..." aliases
+    settings: {
+      'import/resolver': {
+        typescript: {
+          project: './apps/front-end/tsconfig.json',
+        },
+      },
+    },
+
     rules: {
+      '@next/next/no-html-link-for-pages': ['error', 'apps/front-end/'],
       'rulesdir/import-style-order': 'off',
       'rulesdir/no-styled-component-outside-styles': 'off',
       'rulesdir/test-should-match-component-name': 'off',
       'rulesdir/no-react-router-navigate': 'off',
-      // note you must disable the base rule as it can report incorrect errors
+      
       'no-use-before-define': 'off',
       '@typescript-eslint/no-use-before-define': ['error'],
       'no-shadow': 'off',
@@ -74,22 +87,16 @@ const eslintConfig = defineConfig([
       'react/prop-types': 'off',
       'react/jsx-props-no-spreading': 'off',
       'import/no-unresolved': 'off',
-      'import/extensions': [
-        'error',
-        'ignorePackages',
-        {
-          js: 'never',
-          jsx: 'never',
-          ts: 'never',
-          tsx: 'never',
-          webp: 'always',
-        },
-      ],
+      
+      // FIX 2: Turn this OFF. TypeScript handles extensions. 
+      // This rule struggles with path aliases like "@/lib".
+      'import/extensions': 'off',
+
       'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
       'no-param-reassign': ['error', { props: false }],
       'react/no-danger': 'off',
 
-      //Disable them after fixing the errors
+      // Other overrides
       camelcase: 'off',
       'no-array-constructor': 'off',
       'react/function-component-definition': 'off',
@@ -97,7 +104,6 @@ const eslintConfig = defineConfig([
       'react/jsx-no-useless-fragment': 'off',
       'no-unused-expressions': 'off',
       'react-hooks/exhaustive-deps': 'off',
-      '@typescript-eslint/no-shadow': 'off',
       'no-nested-ternary': 'off',
       'import/prefer-default-export': 'off',
       'jsx-a11y/no-noninteractive-element-interactions': 'off',
@@ -105,56 +111,40 @@ const eslintConfig = defineConfig([
       'jsx-a11y/media-has-caption': 'off',
       'no-unsafe-optional-chaining': 'off',
       'jsx-a11y/no-static-element-interactions': 'off',
-      'import/no-extraneous-dependencies': 'off',
       'react/forbid-prop-types': 'off',
       'no-underscore-dangle': 'off',
-      '@typescript-eslint/no-use-before-define': 'off',
       'react/no-array-index-key': 'off',
       'react/no-unescaped-entities': 'off',
       'consistent-return': 'off',
       'no-plusplus': 'off',
-      'no-async-promise-executor': 'off',
       'no-await-in-loop': 'off',
       'prefer-promise-reject-errors': 'off',
       'no-lonely-if': 'off',
       'no-restricted-globals': 'off',
       'react/destructuring-assignment': 'off',
       'react/require-default-props': 'off',
-      'no-prototype-builtins': 'off',
       'jsx-a11y/control-has-associated-label': 'off',
       'default-case': 'off',
       'react/no-unused-prop-types': 'off',
       'react/no-unstable-nested-components': 'off',
       'func-names': 'off',
-      'no-constant-condition': 'off',
-      'no-empty': 'off',
       'react/button-has-type': 'off',
       'no-return-assign': 'off',
       'no-return-await': 'off',
       'no-new': 'off',
       'jsx-a11y/label-has-associated-control': 'off',
       'new-cap': 'off',
-      'no-case-declarations': 'off',
       'prefer-regex-literals': 'off',
       eqeqeq: 'off',
       'import/no-duplicates': 'off',
-      'no-duplicate-imports': 'off',
       'import/order': 'off',
-      'no-console': 'off',
       'react/default-props-match-prop-types': 'off',
-      'require-atomic-updates': 'off',
     },
   },
 
   // Jest configuration for test files
   {
-    files: [
-      '**/__tests__/**/*',
-      '**/*.test.ts',
-      '**/*.test.tsx',
-      '**/*.spec.ts',
-      '**/*.spec.tsx',
-    ],
+    files: ['**/__tests__/**/*', '**/*.test.ts', '**/*.test.tsx', '**/*.spec.ts', '**/*.spec.tsx'],
     languageOptions: {
       globals: {
         test: 'readonly',
@@ -170,6 +160,7 @@ const eslintConfig = defineConfig([
     },
   },
 
+  // Prettier Config
   {
     plugins: {
       prettier: eslintPluginPrettier,
@@ -192,14 +183,23 @@ const eslintConfig = defineConfig([
     },
   },
 
-  // Production rules
+  // Production rules (Modified to match apps/front-end)
   {
-    files: ['src/**/*.{js,ts,jsx,tsx}'],
+    // FIX 3: Updated path from 'src/**' to include 'apps/front-end'
+    files: ['apps/front-end/src/**/*.{js,ts,jsx,tsx}'],
     languageOptions: {
       globals: {
         process: 'readonly',
         module: 'readonly',
         require: 'readonly',
+      },
+    },
+    // Settings repeated here just in case, though the first block handles it now
+    settings: {
+      'import/resolver': {
+        typescript: {
+          project: './apps/front-end/tsconfig.json',
+        },
       },
     },
     rules: {
@@ -244,19 +244,13 @@ const eslintConfig = defineConfig([
       'react/jsx-no-undef': 'error',
       'react/jsx-uses-react': 'error',
       'react/jsx-uses-vars': 'error',
-      'react/react-in-jsx-scope': 'off', // Not needed in Next.js
+      'react/react-in-jsx-scope': 'off', 
 
       // Import/export rules
       'import/order': [
         'error',
         {
-          groups: [
-            'builtin',
-            'external',
-            'internal',
-            ['parent', 'sibling'],
-            'index',
-          ],
+          groups: ['builtin', 'external', 'internal', ['parent', 'sibling'], 'index'],
           'newlines-between': 'always',
           alphabetize: {
             order: 'asc',
@@ -267,15 +261,12 @@ const eslintConfig = defineConfig([
 
       // Additional production rules
       'no-process-env': 'warn',
-      'no-warning-comments': [
-        'warn',
-        { terms: ['todo', 'fixme', 'xxx'], location: 'anywhere' },
-      ],
+      'no-warning-comments': ['warn', { terms: ['todo', 'fixme', 'xxx'], location: 'anywhere' }],
     },
   },
-  // Override default ignores of eslint-config-next.
+  
+  // Ignores
   globalIgnores([
-    // Default ignores of eslint-config-next:
     '.next/**',
     'out/**',
     'build/**',

@@ -1,7 +1,8 @@
-import Input from '@shared/components/ui/atoms/Input/Input';
-import Text from '@shared/components/ui/atoms/Text/Text';
 import { useField } from 'formik';
 import type { HTMLProps, ReactNode } from 'react';
+
+import Input from '@shared/components/ui/atoms/Input/Input';
+import Text from '@shared/components/ui/atoms/Text/Text';
 
 interface Props extends Omit<HTMLProps<HTMLInputElement>, 'name'> {
   readonly name: string; // <-- required for Formik

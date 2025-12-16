@@ -36,10 +36,7 @@ export const useSignUpForm = () => {
   };
 
   const handleSubmit = useCallback(
-    async (
-      values: typeof initialValues,
-      { resetForm }: { resetForm: () => void }
-    ) => {
+    async (values: typeof initialValues, { resetForm }: { resetForm: () => void }) => {
       try {
         if (!values.profilePhoto) throw new Error('Profile photo is missing');
 

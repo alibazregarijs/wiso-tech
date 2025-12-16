@@ -1,22 +1,21 @@
 'use client';
-import { useLearnerMentor } from '@src/features/auth/sign-up/context/LearnerMentorContextProvider';
 import WorkIcon from '@mui/icons-material/Work';
 import CircularProgress from '@mui/material/CircularProgress';
-import Button from '@shared/components/ui/atoms/Button/Button';
-import Text from '@shared/components/ui/atoms/Text/Text';
-import SignUpCard from '@shared/components/ui/molecules/SignUpCard/SignUpCard';
 import { useFormikContext } from 'formik';
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
+
+import Button from '@shared/components/ui/atoms/Button/Button';
+import Text from '@shared/components/ui/atoms/Text/Text';
+import SignUpCard from '@shared/components/ui/molecules/SignUpCard/SignUpCard';
+import { useLearnerMentor } from '@src/features/auth/sign-up/context/LearnerMentorContextProvider';
 
 type Props = Readonly<React.HTMLAttributes<HTMLDivElement>> & {
   isSubmitting?: boolean;
 };
 
 export default function LearnerMentor(props: Props) {
-  const [selected, setSelected] = useState<'learner' | 'mentor' | null>(
-    'learner'
-  );
+  const [selected, setSelected] = useState<'learner' | 'mentor' | null>('learner');
 
   const { isSubmitting, ...rest } = props;
 

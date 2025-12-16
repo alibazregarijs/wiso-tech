@@ -1,5 +1,6 @@
-import SignUpForm from '@src/features/auth/sign-up/components/SignUpForm';
 import React from 'react';
+
+import SignUpForm from '@src/features/auth/sign-up/components/SignUpForm';
 
 const Page = () => {
   return (

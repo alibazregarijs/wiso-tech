@@ -1,8 +1,9 @@
-import React from 'react';
 import HomeFilledIcon from '@mui/icons-material/HomeFilled';
-import Text from '@src/shared/components/ui/atoms/Text/Text';
+import React from 'react';
+
 import { footerItems } from '@src/features/landing-page/constants';
 import Devider from '@src/shared/components/ui/atoms/Devider/Devider';
+import Text from '@src/shared/components/ui/atoms/Text/Text';
 
 const LandingFooter = () => {
   return (

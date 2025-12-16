@@ -1,6 +1,7 @@
 // app/api/upload/route.ts
-import { pinata } from '@shared/utils/PianataConfig';
 import { NextRequest, NextResponse } from 'next/server';
+
+import { pinata } from '@shared/utils/PianataConfig';
 
 export async function POST(request: NextRequest) {
   try {
@@ -21,11 +22,8 @@ export async function POST(request: NextRequest) {
     // 2. Return the full URL to the client
     return NextResponse.json(url, { status: 200 });
   } catch (error) {
-    /* eslint-disable no-console */
+    // eslint-disable-next-line no-console
     console.error('Error uploading file to Pinata:', error);
-    return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

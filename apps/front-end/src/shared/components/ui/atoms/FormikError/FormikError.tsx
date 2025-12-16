@@ -1,6 +1,7 @@
-import Text from '@shared/components/ui/atoms/Text/Text';
 import type { FieldMetaProps } from 'formik';
 import React from 'react';
+
+import Text from '@shared/components/ui/atoms/Text/Text';
 
 type Props = Readonly<React.HTMLAttributes<HTMLDivElement>> & {
   field: FieldMetaProps<string>;

@@ -1,16 +1,16 @@
 'use client';
 
-import React from 'react';
-import Link from 'next/link';
 import HomeFilledIcon from '@mui/icons-material/HomeFilled';
+import Link from 'next/link';
+import React from 'react';
 
 // Shared Components
-import Text from '@shared/components/ui/atoms/Text/Text';
+import Navbar from '@shared/components/layouts/NavbarCompound';
 import Button from '@shared/components/ui/atoms/Button/Button';
+import Text from '@shared/components/ui/atoms/Text/Text';
 import { navItems } from '@shared/constants';
 import { MobileNavLink } from '@src/shared/components/layouts/MobileNavLink';
 // The Compound Component
-import Navbar from '@shared/components/layouts/NavbarCompound';
 
 // Helper: A Link that closes the menu when clicked
 

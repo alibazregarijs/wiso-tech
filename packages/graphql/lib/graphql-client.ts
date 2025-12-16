@@ -16,10 +16,7 @@ export const client = new GraphQLClient(
 
 // This function is used by the generated hooks
 
-export const fetcher = <
-  TData,
-  TVariables extends Record<string, any> | undefined = undefined,
->(
+export const fetcher = <TData, TVariables extends Record<string, any> | undefined = undefined>(
   query: string,
   variables?: TVariables,
   headers?: RequestInit['headers']

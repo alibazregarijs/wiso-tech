@@ -12,6 +12,7 @@ export async function proxy(request: NextRequest) {
     '/',
     '/reset-password',
     '/forget-password',
+    '/dashboard/learner',
   ];
   const isPublicRoute = publicRoutes.includes(url.pathname);
 
@@ -22,10 +23,7 @@ export async function proxy(request: NextRequest) {
   }
 
   // 3. (Optional) Redirect authenticated users away from public auth routes (e.g. login)
-  if (
-    sessionCookie &&
-    (url.pathname === '/sign-in' || url.pathname === '/sign-up')
-  ) {
+  if (sessionCookie && (url.pathname === '/sign-in' || url.pathname === '/sign-up')) {
     url.pathname = '/dashboard'; // Redirect to your dashboard or home
     return NextResponse.redirect(url);
   }

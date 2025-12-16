@@ -1,18 +1,18 @@
 'use client';
 import { CircularProgress } from '@mui/material';
+import { Formik, Form } from 'formik';
+import Link from 'next/link';
+import React from 'react';
+
 import Snackbar from '@shared/components/ui/molecules/Snackbar/Snackbar';
 import { useForgetPasswordForm } from '@src/features/auth/forget-password/hooks/useForgetPassword';
 import { forgetPasswordSchema } from '@src/features/auth/forget-password/types';
 import Button from '@src/shared/components/ui/atoms/Button/Button';
 import Text from '@src/shared/components/ui/atoms/Text/Text';
 import InputWithLabel from '@src/shared/components/ui/molecules/InputWithLabel/InputWithLabel';
-import { Formik, Form } from 'formik';
-import Link from 'next/link';
-import React from 'react';
 
 const ForgetPasswordForm = () => {
-  const { initialValues, handleSubmit, snackbar, handleCloseSnackbar } =
-    useForgetPasswordForm();
+  const { initialValues, handleSubmit, snackbar, handleCloseSnackbar } = useForgetPasswordForm();
   return (
     <>
       <Formik

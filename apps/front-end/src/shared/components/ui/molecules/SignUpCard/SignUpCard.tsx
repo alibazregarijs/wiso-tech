@@ -1,5 +1,6 @@
-import Text from '@shared/components/ui/atoms/Text/Text';
 import React from 'react';
+
+import Text from '@shared/components/ui/atoms/Text/Text';
 
 type Props = Readonly<React.HTMLAttributes<HTMLButtonElement>> & {
   h2?: React.ReactNode;
@@ -35,9 +36,7 @@ export default function SignUpCard(props: Props) {
         >
           {h2}
         </Text>
-        <Text className="mt-1! text-sm text-zinc-500 dark:text-zinc-400">
-          {p}
-        </Text>
+        <Text className="mt-1! text-sm text-zinc-500 dark:text-zinc-400">{p}</Text>
       </div>
     </button>
   );

@@ -10,9 +10,7 @@ export const signUpValidationSchema = Yup.object({
     )
     .required('Username is required'),
 
-  email: Yup.string()
-    .email('Invalid email address')
-    .required('Email is required'),
+  email: Yup.string().email('Invalid email address').required('Email is required'),
 
   password: Yup.string()
     .min(8, 'Password must be at least 8 characters')
@@ -39,9 +37,7 @@ export const signUpValidationSchema = Yup.object({
     })
     .test('fileType', 'Unsupported file format', (value) => {
       if (!value) return false; // reject empty
-      return value instanceof File
-        ? ['image/jpeg', 'image/png'].includes(value.type)
-        : false;
+      return value instanceof File ? ['image/jpeg', 'image/png'].includes(value.type) : false;
     }),
 
   userType: Yup.string()

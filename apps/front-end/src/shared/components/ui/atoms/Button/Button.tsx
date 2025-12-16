@@ -4,28 +4,12 @@ interface Props extends Readonly<ButtonHTMLAttributes<HTMLButtonElement>> {
   readonly variant?: 'regular' | 'error' | 'secondary';
 }
 
-export default function Button({
-  className,
-  variant = 'regular',
-  ...props
-}: Props) {
-  const classNames = [
-    className,
-    'rounded-lg',
-    'p-2',
-    'text-sm',
-    'px-4',
-    'cursor-pointer',
-  ];
+export default function Button({ className, variant = 'regular', ...props }: Props) {
+  const classNames = [className, 'rounded-lg', 'p-2', 'text-sm', 'px-4', 'cursor-pointer'];
 
   switch (variant) {
     case 'secondary':
-      classNames.push(
-        'bg-gray-dark-100',
-        'text-white',
-        'text-gray-dark-100',
-        'font-bold'
-      );
+      classNames.push('bg-gray-dark-100', 'text-white', 'text-gray-dark-100', 'font-bold');
       break;
     case 'regular':
     default:

@@ -30,6 +30,11 @@ const config = {
           },
         },
         white: '#f6f8f7',
+        orange: {
+          light: {
+            100: '#f97316',
+          },
+        },
       },
       fontFamily: {
         lexend: ['var(--font-lexend)', 'sans-serif'],

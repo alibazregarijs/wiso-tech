@@ -9,13 +9,7 @@ interface SnackbarProps {
   handleCloseSnackbar: () => void;
 }
 
-const Snackbar = ({
-  open,
-  time = 4000,
-  message,
-  severity,
-  handleCloseSnackbar,
-}: SnackbarProps) => {
+const Snackbar = ({ open, time = 4000, message, severity, handleCloseSnackbar }: SnackbarProps) => {
   return (
     <MuiSnackbar
       open={open}

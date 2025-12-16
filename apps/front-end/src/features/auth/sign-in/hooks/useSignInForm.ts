@@ -31,10 +31,7 @@ export const useSignInForm = () => {
   };
 
   const handleSubmit = useCallback(
-    async (
-      values: typeof initialValues,
-      { resetForm }: { resetForm?: () => void } = {}
-    ) => {
+    async (values: typeof initialValues, { resetForm }: { resetForm?: () => void } = {}) => {
       try {
         // 1. Auth Logic
         await authClient.signIn.email(

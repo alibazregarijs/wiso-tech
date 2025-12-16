@@ -1,8 +1,9 @@
 'use client';
 import { ThemeProvider } from '@mui/material/styles';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
-import { muiCreateTheme } from '@shared/utils/MuiTheme';
 import React, { useMemo } from 'react';
+
+import { muiCreateTheme } from '@shared/utils/MuiTheme';
 
 const MuiThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const theme = useMemo(() => muiCreateTheme(), []);
