@@ -3,7 +3,7 @@ import { createTheme, type Theme } from '@mui/material/styles';
 export const muiCreateTheme = (): Theme => {
   return createTheme({
     typography: {
-      fontFamily: 'var(--font-lexend) , sans-serif',
+      fontFamily: 'var(--font-lexend), var(--font-inter), sans-serif',
     },
     palette: {
       primary: {

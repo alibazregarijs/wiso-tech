@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${lexend.className} ${inter.className} font-sans`}>
+      <body className={`${lexend.variable} ${inter.variable} font-sans`}>
         <AppRouterCacheProvider>
           <MuiThemeProvider>
             <QueryProvider>{children}</QueryProvider>
