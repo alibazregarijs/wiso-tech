@@ -39,7 +39,7 @@ export const LinearProgressBar = ({ value = 20 }: Props) => {
           backgroundColor: progressColor,
         },
         [`&.${linearProgressClasses.colorPrimary}`]: {
-          backgroundColor: '#141d1a',
+          backgroundColor: '#102219',
         },
       }}
     />
@@ -48,14 +48,16 @@ export const LinearProgressBar = ({ value = 20 }: Props) => {
 
 export const ProgressBarFooter = ({ value, text }: Props) => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col gap-2">
       <LinearProgressBar value={value} />
-      <Text as="p" className="text-gray-light-100 font-base">
-        {value}%{' '}
-        <Text as="strong" className="text-gray-light-100 font-base">
+      <div className="flex gap-2">
+        <Text as="p" className="text-gray-light-100 font-base text-sm">
+          {value}%{' '}
+        </Text>
+        <Text as="strong" className="text-gray-light-100 text-sm">
           {text}
         </Text>
-      </Text>
+      </div>
     </div>
   );
 };
