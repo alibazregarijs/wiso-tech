@@ -54,7 +54,7 @@ export const ProgressBarFooter = ({ value, text }: Props) => {
         <Text as="p" className="text-gray-light-100 font-base text-sm">
           {value}%{' '}
         </Text>
-        <Text as="strong" className="text-gray-light-100 text-sm">
+        <Text as="strong" className="text-gray-light-100 text-sm whitespace-nowrap">
           {text}
         </Text>
       </div>

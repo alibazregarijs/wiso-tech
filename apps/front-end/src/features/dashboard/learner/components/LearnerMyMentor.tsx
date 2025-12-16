@@ -8,9 +8,9 @@ import Text from '@src/shared/components/ui/atoms/Text/Text';
 
 const LearnerMyMentor = () => {
   return (
-    <div className="bg-green-dark-200 mt-6 flex flex-col gap-4 rounded-lg">
-      <div className="mt-6 flex flex-col items-center justify-center gap-4">
-        <Text as="h2" className="font-inter text-2xl font-bold text-white">
+    <div className="bg-green-dark-200 flex flex-col gap-4 rounded-lg p-6">
+      <div className="flex flex-col items-center justify-center gap-6">
+        <Text as="h2" className="font-inter text-center text-2xl font-bold text-white">
           My Mentor
         </Text>
         <Avatar
@@ -18,15 +18,15 @@ const LearnerMyMentor = () => {
           src="https://avatars.githubusercontent.com/u/10188296?v=4"
           alt="Mentor"
           sx={{
-            width: 80,
-            height: 80,
+            width: 100,
+            height: 100,
           }}
         />
         <div className="flex flex-col items-center justify-center">
           <Text as="h2" className="font-inter text-xl font-bold text-white">
             David Chen
           </Text>
-          <Text as="p" className="font-inter text-gray-light-100 text-sm">
+          <Text as="p" className="font-inter text-gray-light-100 text-center text-sm">
             Senior Front-end Engineer at TechCorp
           </Text>
         </div>
