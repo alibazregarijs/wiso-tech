@@ -10,4 +10,5 @@ export type CoursesT = {
 };
 export type coursesProps = {
   courses: CoursesT[];
+  className?: string;
 };

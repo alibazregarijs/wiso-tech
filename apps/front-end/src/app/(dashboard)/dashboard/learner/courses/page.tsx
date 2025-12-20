@@ -1,7 +1,9 @@
 import React from 'react';
 
 import LearnerNavbar from '@src/features/learner-dashboard/components/LearnerNavbar';
+import { inProgressItems } from '@src/features/learner-dashboard/constants';
 import Filtration from '@src/features/learner-dashboard-courses/components/Filtration';
+import CoursesCard from '@src/shared/components/layouts/CoursesCard';
 import Devider from '@src/shared/components/ui/atoms/Devider/Devider';
 import Text from '@src/shared/components/ui/atoms/Text/Text';
 
@@ -21,6 +23,9 @@ const page = () => {
       <Devider className="mx-4 mt-8" />
       <Filtration />
       <Devider className="mx-4 mt-8" />
+      <div className="mt-4 px-4">
+        <CoursesCard className="grid md:grid-cols-2 lg:grid-cols-4" courses={inProgressItems} />
+      </div>
     </div>
   );
 };

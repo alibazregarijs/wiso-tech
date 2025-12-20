@@ -22,6 +22,22 @@ export const inProgressItems = [
     progress: 25,
     completed: true,
   },
+  {
+    id: 'progress-3',
+    title: 'UI/UX Design Principles',
+    author: 'john Doe',
+    image: cssImage,
+    progress: 65,
+    completed: true,
+  },
+  {
+    id: 'progress-4',
+    title: 'Advanced CSS and Sass',
+    author: 'john schmedtmann',
+    image: uiImage,
+    progress: 15,
+    completed: true,
+  },
 ];
 
 export const sharedResourcesItems = [
