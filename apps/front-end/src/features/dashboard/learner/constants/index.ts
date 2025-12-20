@@ -11,7 +11,7 @@ export const inProgressItems = [
     title: 'Advanced CSS and Sass',
     author: 'john schmedtmann',
     image: uiImage,
-    progress: 80,
+    progress: 0,
     completed: true,
   },
   {

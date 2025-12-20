@@ -9,7 +9,7 @@ import { MobileNavLink } from '@src/shared/components/layouts/MobileNavLink';
 import Navbar from '@src/shared/components/layouts/NavbarCompound';
 import Notification from '@src/shared/components/ui/atoms/Notification/Notification';
 import Searchbar from '@src/shared/components/ui/molecules/Searchbar/Searchbar';
-import { navItems } from '@src/shared/constants';
+import { navItemsDashboard } from '@src/shared/constants';
 import useGetUserSession from '@src/shared/utils/useGetUserSession';
 
 export const UserAvatar = () => {
@@ -35,7 +35,7 @@ const LearnerNavbar = () => {
             </Text>
           </div>
           <Navbar.Desktop className="px-2">
-            {navItems.map((item) => (
+            {navItemsDashboard.map((item) => (
               <Link key={item.name} href={item.href}>
                 <Text
                   as="span"
@@ -64,7 +64,7 @@ const LearnerNavbar = () => {
       <Navbar.MobileMenu>
         {/* Mobile Links */}
         <div className="mt-4 flex flex-col space-y-4">
-          {navItems.map((item) => (
+          {navItemsDashboard.map((item) => (
             <MobileNavLink key={item.name} href={item.href}>
               <Text as="div" className="text-gray-light-100 text-lg hover:text-white">
                 {item.name}

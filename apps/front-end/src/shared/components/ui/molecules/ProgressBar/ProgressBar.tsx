@@ -1,6 +1,7 @@
 'use client';
 import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
 import { styled } from '@mui/material/styles';
+import clsx from 'clsx';
 import * as React from 'react';
 
 import Text from '@src/shared/components/ui/atoms/Text/Text';
@@ -11,6 +12,7 @@ type Props = Readonly<React.HTMLAttributes<HTMLDivElement>> & {
 };
 
 type ProgressBarBaseProps = {
+  className?: string;
   children?: React.ReactNode;
 };
 
@@ -79,8 +81,9 @@ export const ProgressBarHeader = ({ text, value }: Props) => {
 };
 
 // 1. Rename this component to avoid the name collision
-const ProgressBarBase = ({ children }: ProgressBarBaseProps) => {
-  return <div className="flex flex-col gap-2">{children}</div>;
+const ProgressBarBase = ({ children, className }: ProgressBarBaseProps) => {
+  const classNames = clsx('flex flex-col gap-2', className);
+  return <div className={classNames}>{children}</div>;
 };
 
 // 2. Create the final variable using Object.assign on the Base component
