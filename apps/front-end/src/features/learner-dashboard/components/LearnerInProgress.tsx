@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { inProgressItems } from '@src/features/dashboard/learner/constants';
+import { inProgressItems } from '@src/features/learner-dashboard/constants';
 import CoursesCard from '@src/shared/components/layouts/CoursesCard';
 import Text from '@src/shared/components/ui/atoms/Text/Text';
 

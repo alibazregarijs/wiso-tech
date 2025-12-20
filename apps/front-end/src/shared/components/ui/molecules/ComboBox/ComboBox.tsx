@@ -1,36 +1,34 @@
 import FormControl from '@mui/material/FormControl';
 import MenuItem from '@mui/material/MenuItem';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
+import clsx from 'clsx';
 import React from 'react';
 
 type Props = Readonly<React.HTMLAttributes<HTMLDivElement>> & {
   items: string[];
+  setItem: (_value: string) => void;
+  item: string;
+  className?: string;
 };
 
-export default function ComboBox({ items }: Props) {
-  const [state, setState] = React.useState('');
+export default function ComboBox({ items, setItem, item, className }: Props) {
+  const classNames = clsx(className);
 
   const handleChange = (event: SelectChangeEvent) => {
-    setState(event.target.value);
+    setItem(event.target.value);
   };
 
   return (
     <FormControl
+      className={classNames}
       sx={{
-        m: 1,
         minWidth: 160,
         '& .MuiOutlinedInput-root': {
           backgroundColor: '#141d1a',
           color: 'white',
-          '& fieldset': {
-            border: 'none',
-          },
-          '&:hover fieldset': {
-            border: 'none',
-          },
-          '&.Mui-focused fieldset': {
-            border: 'none',
-          },
+          '& fieldset': { border: 'none' },
+          '&:hover fieldset': { border: 'none' },
+          '&.Mui-focused fieldset': { border: 'none' },
         },
         '& .MuiSelect-icon': {
           color: 'white',
@@ -40,7 +38,7 @@ export default function ComboBox({ items }: Props) {
     >
       <Select
         id="demo-select-small"
-        value={state}
+        value={item}
         onChange={handleChange}
         displayEmpty
         renderValue={(selected) => {
@@ -49,17 +47,16 @@ export default function ComboBox({ items }: Props) {
           }
           return selected;
         }}
-        // 👇 ADD THIS PROP TO STYLE THE DROPDOWN LIST
         MenuProps={{
           PaperProps: {
             sx: {
-              backgroundColor: '#141d1a', // Background color
-              color: 'white', // Default text color for the menu
+              backgroundColor: '#141d1a',
+              color: 'white',
               '& .MuiMenuItem-root': {
-                color: 'white', // ✅ Make menu item text white
+                color: 'white',
               },
               '& .MuiMenuItem-root:hover': {
-                backgroundColor: 'rgba(255, 255, 255, 0.15)', // Optional hover
+                backgroundColor: 'rgba(255, 255, 255, 0.15)',
               },
             },
           },
@@ -69,9 +66,9 @@ export default function ComboBox({ items }: Props) {
           <em>All Category</em>
         </MenuItem>
 
-        {items.map((item) => (
-          <MenuItem key={item} value={item}>
-            {item}
+        {items.map((option) => (
+          <MenuItem key={option} value={option}>
+            {option}
           </MenuItem>
         ))}
       </Select>

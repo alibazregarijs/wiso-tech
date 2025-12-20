@@ -28,4 +28,5 @@ export const navItemsDashboard = [
   },
 ];
 
-export const CoursesComboBoxItems = ['React', 'Nextjs', 'Css', 'HTML', 'Javascript', 'TypeScript'];
+export const coursesTechItems = ['React', 'Nextjs', 'Css', 'HTML', 'Javascript', 'TypeScript'];
+export const coursesTechLevelItems = ['Beginner', 'Intermediate', 'Advanced'];

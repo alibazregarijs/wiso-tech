@@ -1,6 +1,7 @@
 import React from 'react';
 
-import LearnerNavbar from '@src/features/dashboard/learner/components/LearnerNavbar';
+import LearnerNavbar from '@src/features/learner-dashboard/components/LearnerNavbar';
+import Filtration from '@src/features/learner-dashboard-courses/components/Filtration';
 import Devider from '@src/shared/components/ui/atoms/Devider/Devider';
 import Text from '@src/shared/components/ui/atoms/Text/Text';
 
@@ -17,6 +18,8 @@ const page = () => {
           Expand your knowledge and skills with our extensive course library.
         </Text>
       </div>
+      <Devider className="mx-4 mt-8" />
+      <Filtration />
       <Devider className="mx-4 mt-8" />
     </div>
   );

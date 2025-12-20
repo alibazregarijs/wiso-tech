@@ -1,8 +1,8 @@
-import LearnerGoals from '@src/features/dashboard/learner/components/LearnerGoals';
-import LearnerInProgress from '@src/features/dashboard/learner/components/LearnerInProgress';
-import LearnerMyMentor from '@src/features/dashboard/learner/components/LearnerMyMentor';
-import LearnerNavbar from '@src/features/dashboard/learner/components/LearnerNavbar';
-import LearnerResource from '@src/features/dashboard/learner/components/LearnerResource';
+import LearnerGoals from '@src/features/learner-dashboard/components/LearnerGoals';
+import LearnerInProgress from '@src/features/learner-dashboard/components/LearnerInProgress';
+import LearnerMyMentor from '@src/features/learner-dashboard/components/LearnerMyMentor';
+import LearnerNavbar from '@src/features/learner-dashboard/components/LearnerNavbar';
+import LearnerResource from '@src/features/learner-dashboard/components/LearnerResource';
 import Devider from '@src/shared/components/ui/atoms/Devider/Devider';
 import Text from '@src/shared/components/ui/atoms/Text/Text';
 

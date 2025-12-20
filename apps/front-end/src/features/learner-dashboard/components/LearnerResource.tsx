@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { sharedResourcesItems } from '@src/features/dashboard/learner/constants/index';
+import { sharedResourcesItems } from '@src/features/learner-dashboard/constants/index';
 import Text from '@src/shared/components/ui/atoms/Text/Text';
 import IconBadge from '@src/shared/components/ui/molecules/IconBadge/IconBadge';
 
