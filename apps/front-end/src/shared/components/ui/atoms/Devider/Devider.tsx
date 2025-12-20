@@ -7,7 +7,7 @@ import { cn } from '@src/shared/utils';
 type Props = Readonly<React.HTMLAttributes<HTMLDivElement>>;
 
 export default function Divider({ className, ...rest }: Props) {
-  const classes = cn('mt-4 mx-6 border border-gray-light-100', className);
+  const classes = cn('border border-gray-light-100', className);
 
   return <div {...rest} className={classes} />;
 }

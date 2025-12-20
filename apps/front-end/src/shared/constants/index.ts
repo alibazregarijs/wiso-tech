@@ -27,3 +27,5 @@ export const navItemsDashboard = [
     href: '/dashboard/learner/mentors',
   },
 ];
+
+export const CoursesComboBoxItems = ['React', 'Nextjs', 'Css', 'HTML', 'Javascript', 'TypeScript'];

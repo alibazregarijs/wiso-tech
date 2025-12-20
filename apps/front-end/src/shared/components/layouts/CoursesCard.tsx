@@ -1,21 +1,10 @@
-import Image, { type StaticImageData } from 'next/image';
+import Image from 'next/image';
 import React from 'react';
 
 import Button from '@src/shared/components/ui/atoms/Button/Button';
 import Text from '@src/shared/components/ui/atoms/Text/Text';
 import ProgressBar from '@src/shared/components/ui/molecules/ProgressBar/ProgressBar';
-
-type CoursesT = {
-  id: string;
-  title: string;
-  author: string;
-  image: StaticImageData;
-  progress: number;
-  completed: boolean;
-};
-type coursesProps = {
-  courses: CoursesT[];
-};
+import { coursesProps } from '@src/shared/types';
 
 const CoursesCard = ({ courses }: coursesProps) => {
   return (
