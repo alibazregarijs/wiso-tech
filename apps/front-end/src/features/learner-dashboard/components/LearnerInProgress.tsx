@@ -12,7 +12,7 @@ const LearnerInProgress = () => {
       <Text as="h1" className="font-inter text-2xl font-bold text-white">
         In Progress
       </Text>
-      <CoursesCard courses={inProgressItems} />
+      <CoursesCard courses={inProgressItems.slice(0, 2)} />
     </div>
   );
 };

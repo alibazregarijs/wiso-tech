@@ -4,12 +4,14 @@ import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 
 import cssImage from '@src/public/learner/css2.webp';
 import uiImage from '@src/public/learner/ui.webp';
+import { CoursesT } from '@src/shared/types';
 
-export const inProgressItems = [
+export const inProgressItems: CoursesT[] = [
   {
     id: 'progress-1',
     title: 'Advanced CSS and Sass',
     author: 'john schmedtmann',
+    level: 'Hard',
     image: uiImage,
     progress: 0,
     completed: true,
@@ -18,22 +20,25 @@ export const inProgressItems = [
     id: 'progress-2',
     title: 'UI/UX Design Principles',
     author: 'john Doe',
+    level: 'Beginner',
     image: cssImage,
     progress: 25,
     completed: true,
   },
   {
     id: 'progress-3',
-    title: 'UI/UX Design Principles',
+    title: 'Data Structure Principles',
     author: 'john Doe',
+    level: 'Intermediate',
     image: cssImage,
     progress: 65,
     completed: true,
   },
   {
     id: 'progress-4',
-    title: 'Advanced CSS and Sass',
+    title: 'Advanced React and Sass',
     author: 'john schmedtmann',
+    level: 'Hard',
     image: uiImage,
     progress: 15,
     completed: true,
