@@ -12,3 +12,21 @@ export const navItems = [
     href: '/learner',
   },
 ];
+
+export const navItemsDashboard = [
+  {
+    name: 'Dashboard',
+    href: '/dashboard/learner',
+  },
+  {
+    name: 'Courses',
+    href: '/dashboard/learner/courses',
+  },
+  {
+    name: 'Mentors',
+    href: '/dashboard/learner/mentors',
+  },
+];
+
+export const coursesTechItems = ['React', 'Nextjs', 'Css', 'HTML', 'Javascript', 'TypeScript'];
+export const coursesTechLevelItems = ['Beginner', 'Intermediate', 'Advanced'];

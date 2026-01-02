@@ -19,7 +19,7 @@ export default function Notification({
     'text-text-secondary',
     'hover:text-primary',
     'relative',
-    'p-2',
+    'lg:p-0 p-2',
   ].join(' ');
   return (
     <button type={type} {...props} className={classNames}>

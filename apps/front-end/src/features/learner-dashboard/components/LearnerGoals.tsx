@@ -6,7 +6,7 @@ import ProgressBar from '@src/shared/components/ui/molecules/ProgressBar/Progres
 
 const LearnerGoals = () => {
   return (
-    <div className="bg-green-dark-200 mt-6 flex flex-col gap-6 rounded-lg p-6">
+    <div className="bg-green-dark-200 flex h-full flex-col gap-6 space-y-10 rounded-lg p-6 lg:space-y-0">
       <div className="flex">
         <Text as="h2" className="text-2xl font-bold text-white">
           My Goals

@@ -9,7 +9,7 @@ import { MobileNavLink } from '@src/shared/components/layouts/MobileNavLink';
 import Navbar from '@src/shared/components/layouts/NavbarCompound';
 import Notification from '@src/shared/components/ui/atoms/Notification/Notification';
 import Searchbar from '@src/shared/components/ui/molecules/Searchbar/Searchbar';
-import { navItems } from '@src/shared/constants';
+import { navItemsDashboard } from '@src/shared/constants';
 import useGetUserSession from '@src/shared/utils/useGetUserSession';
 
 export const UserAvatar = () => {
@@ -24,15 +24,18 @@ const LearnerNavbar = () => {
       {/* --- TOP BAR --- */}
       <Navbar.Container>
         {/* BRAND */}
-        <Navbar.Brand className="gap-4">
+        <Navbar.Brand className="gap-2">
           <div className="flex items-center justify-center">
             <HomeFilledIcon fontSize="large" className="text-green-light-100" />
-            <Text as="h1" className="font-inter ml-2 font-bold text-white lg:ml-4 lg:text-2xl">
+            <Text
+              as="h1"
+              className="font-inter ml-2 font-bold text-nowrap text-white lg:ml-4 lg:text-2xl"
+            >
               Wiso-Tech
             </Text>
           </div>
-          <Navbar.Desktop>
-            {navItems.map((item) => (
+          <Navbar.Desktop className="px-2">
+            {navItemsDashboard.map((item) => (
               <Link key={item.name} href={item.href}>
                 <Text
                   as="span"
@@ -47,7 +50,7 @@ const LearnerNavbar = () => {
 
         {/* DESKTOP NAV (Hidden on Mobile) */}
         {/* DESKTOP ACTIONS (Hidden on Mobile) */}
-        <Navbar.Desktop className="">
+        <Navbar.Desktop>
           <Searchbar />
           <Notification isNotifications={false} />
           <UserAvatar />
@@ -61,7 +64,7 @@ const LearnerNavbar = () => {
       <Navbar.MobileMenu>
         {/* Mobile Links */}
         <div className="mt-4 flex flex-col space-y-4">
-          {navItems.map((item) => (
+          {navItemsDashboard.map((item) => (
             <MobileNavLink key={item.name} href={item.href}>
               <Text as="div" className="text-gray-light-100 text-lg hover:text-white">
                 {item.name}

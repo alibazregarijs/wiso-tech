@@ -13,6 +13,7 @@ export async function proxy(request: NextRequest) {
     '/reset-password',
     '/forget-password',
     '/dashboard/learner',
+    '/dashboard/learner/courses',
   ];
   const isPublicRoute = publicRoutes.includes(url.pathname);
 
